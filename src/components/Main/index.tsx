@@ -1,5 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { v4 as uuidv4 } from 'uuid';
+import teamProjectData from '../../data/teamProject.json';
+import personalProjectData from '../../data/personalProject.json';
+import ProjectItem from './ProjectItem';
 
 interface MainStyleProps {
   readonly isIntro: boolean;
@@ -41,45 +45,28 @@ const ProjectList = styled.ul`
   }
 `;
 
-const ProjectItem = styled.li`
-  width: 300px;
-
-  &:nth-child(odd) {
-    align-self: flex-start;
-  }
-
-  &:nth-child(even) {
-    align-self: flex-end;
-  }
-`;
-
 type MainProps = {
   isIntro: boolean;
 };
 
 export default function Main({ isIntro }: MainProps) {
+  console.log(teamProjectData);
   return (
     <MainLayout isIntro={isIntro}>
       <ContentBox>
         <Title>TEAM Project</Title>
         <ProjectList>
-          <ProjectItem>1</ProjectItem>
-          <ProjectItem>1</ProjectItem>
-          <ProjectItem>1</ProjectItem>
-          <ProjectItem>1</ProjectItem>
-          <ProjectItem>1</ProjectItem>
-          <ProjectItem>1</ProjectItem>
+          {teamProjectData.map(data => (
+            <ProjectItem key={uuidv4()} {...data} />
+          ))}
         </ProjectList>
       </ContentBox>
       <ContentBox>
-        <Title>개인 Project</Title>
+        <Title>Personal Project</Title>
         <ProjectList>
-          <ProjectItem>1</ProjectItem>
-          <ProjectItem>1</ProjectItem>
-          <ProjectItem>1</ProjectItem>
-          <ProjectItem>1</ProjectItem>
-          <ProjectItem>1</ProjectItem>
-          <ProjectItem>1</ProjectItem>
+          {personalProjectData.map(data => (
+            <ProjectItem key={uuidv4()} {...data} />
+          ))}
         </ProjectList>
       </ContentBox>
     </MainLayout>

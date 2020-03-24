@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Festa",
+    "description": "Festa!",
+    "period": "2020.03.09 ~ 2020.03.13"
+  },
+  {
+    "id": 2,
+    "title": "FastScanner",
+    "description": "실시간 항공권 예약 서비스",
+    "period": "2020.02.05 ~ 2020.02.28"
+  },
+  {
+    "id": 3,
+    "title": "Netflix",
+    "description": "영화/TV 프로그램의 콘텐츠에 대한 정보 제공 서비스",
+    "period": "2020.01.22(8시간) / 2020.03.05 ~ 진행중(리팩토링)"
+  },
+  {
+    "id": 4,
+    "title": "Trello",
+    "description": "Trello Clone",
+    "period": "2019.11.12 ~ 2019.11.22"
+  }
+]
