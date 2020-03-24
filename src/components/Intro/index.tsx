@@ -40,7 +40,12 @@ export default function Intro({ isIntro, onViewPortfolio }: IntroProps) {
     <IntroLayout isIntro={isIntro}>
       <IntroInner>
         <Typing text="안녕하세요! 이철환입니다." speed={2000} />
-        <button onClick={onViewPortfolio}>자세히 보기</button>
+        <button
+          style={{ position: 'fixed', top: '0', right: 0 }}
+          onClick={onViewPortfolio}
+        >
+          자세히 보기
+        </button>
       </IntroInner>
     </IntroLayout>
   );
