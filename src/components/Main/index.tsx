@@ -1,58 +1,32 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
-import teamProjectData from '../../data/teamProject.json';
-import personalProjectData from '../../data/personalProject.json';
 import ProjectItem from './ProjectItem';
+import teamProjectData from '../../datas/teamProject.json';
+import personalProjectData from '../../datas/personalProject.json';
 
-interface MainStyleProps {
-  readonly isIntro: boolean;
-}
-
-const MainLayout = styled.section<MainStyleProps>`
+const MainLayout = styled.section`
   display: flex;
-  flex: 1 0 auto;
   background: lightgray;
-  padding: 150px 0 60px 360px;
-  transform: translateX(0);
-  transition: all 0.3s linear;
-
-  ${props =>
-    !props.isIntro &&
-    css`
-      transform: translateX(calc(-100vw));
-    `};
+  position: relative;
+  z-index: 2;
 `;
 
-const ContentBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
+const ContentBox = styled.div``;
 
 const Title = styled.p`
   font-size: 3rem;
 `;
 
-const ProjectList = styled.ul`
-  display: flex;
-  height: 80%;
-
-  &:after {
-    display: block;
-    content: '';
-    clear: both;
-  }
-`;
+const ProjectList = styled.ul``;
 
 type MainProps = {
   isIntro: boolean;
 };
 
-export default function Main({ isIntro }: MainProps) {
-  console.log(teamProjectData);
+export default function Main() {
   return (
-    <MainLayout isIntro={isIntro}>
+    <MainLayout>
       <ContentBox>
         <Title>TEAM Project</Title>
         <ProjectList>

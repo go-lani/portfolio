@@ -1,39 +1,23 @@
-import React, { useState } from 'react';
-import styled, { css } from 'styled-components';
+import React from 'react';
+import styled from 'styled-components';
 import Intro from './components/Intro';
 import Main from './components/Main';
 
-interface ContainerTypes {
-  isIntro: boolean;
-}
-
-const Container = styled.div<ContainerTypes>`
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-y: hidden;
+const Container = styled.div`
   width: 100vw;
-  height: 100vh;
-  ${props =>
-    props.isIntro
-      ? css`
-          overflow-x: hidden;
-        `
-      : css`
-          width: auto;
-          overflow-x: auto;
-        `}
+  padding: 100vh 0 0;
 `;
 
 function App() {
-  const [isIntro, setIsintro] = useState(true);
-
-  const onViewPortfolio = () => setIsintro(false);
+  const onViewPortfolio = () => {
+    window.scrollTo(0, 1000);
+  };
 
   return (
     <>
-      <Container isIntro={isIntro}>
-        <Intro isIntro={isIntro} onViewPortfolio={onViewPortfolio} />
-        <Main isIntro={isIntro} />
+      <Container>
+        <Intro onViewPortfolio={onViewPortfolio} />
+        <Main />
       </Container>
     </>
   );
