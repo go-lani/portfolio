@@ -9,6 +9,7 @@ const MainLayout = styled.section`
   display: flex;
   background: lightgray;
   position: relative;
+  height: 200vh;
   z-index: 2;
 `;
 
@@ -24,9 +25,14 @@ type MainProps = {
   isIntro: boolean;
 };
 
-export default function Main() {
+type SectionProps = React.HTMLProps<HTMLElement>;
+
+export default React.forwardRef<HTMLElement, SectionProps>(function Main(
+  props,
+  ref,
+) {
   return (
-    <MainLayout>
+    <MainLayout ref={ref}>
       <ContentBox>
         <Title>TEAM Project</Title>
         <ProjectList>
@@ -45,4 +51,4 @@ export default function Main() {
       </ContentBox>
     </MainLayout>
   );
-}
+});
