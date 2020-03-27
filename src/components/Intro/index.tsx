@@ -4,17 +4,18 @@ import A11yTitle from '../Common/A11yTitle';
 import Typing from '../Common/Typing';
 import media from '../../libs/MediaQuery';
 
-const IntroLayout = styled.section`
+const IntroLayout = styled.section<{ currentOffset: number }>`
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: 0;
-  z-index: 1;
+  top: ${({ currentOffset }) => `-${currentOffset}px`};
+  z-index: 10;
   width: 100vw;
   height: 100vh;
   background: #000;
   padding: 200px;
+  transition: all 0.3s;
 
   ${media.tablet`
     padding: 100px;
@@ -61,11 +62,12 @@ const ViewButton = styled.button<{ type: string }>`
 
 type IntroProps = {
   onViewPortfolio: () => void;
+  currentOffset: number;
 };
 
-export default function Intro({ onViewPortfolio }: IntroProps) {
+export default function Intro({ currentOffset, onViewPortfolio }: IntroProps) {
   return (
-    <IntroLayout>
+    <IntroLayout currentOffset={currentOffset}>
       <A11yTitle>인사말 영역</A11yTitle>
       <Greeting>
         <Typing subject="greeting" text="안녕하세요!" />

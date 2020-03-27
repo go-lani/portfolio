@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import A11yTitle from '../Common/A11yTitle';
 
 const InformationLayout = styled.section`
   min-height: 100vh;

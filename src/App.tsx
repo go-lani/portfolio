@@ -1,4 +1,4 @@
-import React, { useState, createRef, useEffect } from 'react';
+import React, { useState, createRef, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import Intro from './components/Intro';
 import Main from './components/Main';
@@ -11,6 +11,7 @@ const Container = styled.div`
 `;
 
 function App() {
+  const [currentOffset, setCurrentOffset] = useState<number>(0);
   const [mainOffsetTop, setMainOffsetTop] = useState<number>();
   const mainRef = createRef<HTMLElement>();
 
@@ -24,10 +25,25 @@ function App() {
     }
   }, [mainRef]);
 
+  const onScroll = useCallback((e: Event): void => {
+    setCurrentOffset(Math.floor(window.scrollY));
+    if (window.scrollY > window.innerHeight) console.log('over');
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, [onScroll]);
+
   return (
     <>
       <Container>
-        <Intro onViewPortfolio={onViewPortfolio} />
+        <Intro
+          currentOffset={currentOffset}
+          onViewPortfolio={onViewPortfolio}
+        />
         <Main ref={mainRef}>
           <Information />
           <PortFolio />
