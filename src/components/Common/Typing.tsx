@@ -46,8 +46,8 @@ const TypingText = styled.p<{ subject: string }>`
   ${({ subject }) =>
     subject === 'greeting'
       ? css`
-          animation: 2s ${writing} steps(22) 1 forwards reverse,
-            3s ${pointer} steps(22) 1 forwards;
+          animation: 1.5s ${writing} steps(22) 1 forwards reverse,
+            2s ${pointer} steps(22) 1 forwards;
           ${media.desktop`
             width: 250px;
           `}
@@ -62,8 +62,8 @@ const TypingText = styled.p<{ subject: string }>`
         `
       : subject === 'job'
       ? css`
-          animation: 2s ${writing} steps(22) 3s 1 forwards reverse,
-            3s ${pointer} steps(22) 3s 1 forwards;
+          animation: 1.5s ${writing} steps(22) 2s 1 forwards reverse,
+            1.5s ${pointer} steps(22) 2.5s 1 forwards;
           ${media.desktop`
             width: 385px;
           `}
@@ -77,8 +77,8 @@ const TypingText = styled.p<{ subject: string }>`
           `}
         `
       : css`
-          animation: 2s ${writing} steps(22) 6s 1 forwards reverse,
-            1s ${pointer} steps(22) 6s infinite forwards;
+          animation: 1.5s ${writing} steps(22) 4s 1 forwards reverse,
+            1s ${pointer} steps(22) 4s infinite forwards;
           ${media.desktop`
             width: 300px;
           `}

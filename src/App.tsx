@@ -2,6 +2,8 @@ import React, { useState, createRef, useEffect } from 'react';
 import styled from 'styled-components';
 import Intro from './components/Intro';
 import Main from './components/Main';
+import Information from './components/Information';
+import PortFolio from './components/PortFolio';
 
 const Container = styled.div`
   width: 100vw;
@@ -10,34 +12,26 @@ const Container = styled.div`
 
 function App() {
   const [mainOffsetTop, setMainOffsetTop] = useState<number>();
-  const MainEl = createRef<HTMLElement>();
-  const onViewPortfolio = () => {};
+  const mainRef = createRef<HTMLElement>();
 
-  const onHandledWheel = (e: React.WheelEvent<HTMLDivElement>) => {
-    if (mainOffsetTop) {
-      if (e.deltaY > 0 && window.scrollY < mainOffsetTop) {
-        console.log('e.deltaY', e.deltaY);
-        console.log('내림');
-        console.log(mainOffsetTop);
-        window.scrollTo({ top: mainOffsetTop, behavior: 'smooth' });
-      } else if (e.deltaY < 0 && window.scrollY < mainOffsetTop) {
-        console.log('올림');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    }
+  const onViewPortfolio = () => {
+    window.scrollTo({ top: mainOffsetTop, behavior: 'smooth' });
   };
 
   useEffect(() => {
-    if (MainEl && MainEl.current) {
-      setMainOffsetTop(MainEl.current.offsetTop);
+    if (mainRef && mainRef.current) {
+      setMainOffsetTop(mainRef.current.offsetTop);
     }
-  }, [MainEl]);
+  }, [mainRef]);
 
   return (
     <>
-      <Container onWheel={onHandledWheel}>
+      <Container>
         <Intro onViewPortfolio={onViewPortfolio} />
-        <Main ref={MainEl} />
+        <Main ref={mainRef}>
+          <Information />
+          <PortFolio />
+        </Main>
       </Container>
     </>
   );

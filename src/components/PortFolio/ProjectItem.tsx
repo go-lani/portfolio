@@ -13,7 +13,7 @@ const Item = styled.li`
   }
 `;
 
-type ItemProps = {
+type ProjectItemProps = {
   id: number;
   title: string;
   description: string;
@@ -25,6 +25,6 @@ export default function ProjectItem({
   title,
   description,
   period,
-}: ItemProps) {
+}: ProjectItemProps) {
   return <Item>{title}</Item>;
 }

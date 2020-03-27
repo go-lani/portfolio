@@ -124,7 +124,15 @@ input[type=text] {
 	border-radius: 0;
 }
 
-button,
+button {
+	border: none;
+	background: none;
+	cursor: pointer;
+	-webkit-appearance: none;
+	appearance: none;
+	border-radius: none;
+}
+
 input[type=file],
 input[type=image],
 input[type=reset],
