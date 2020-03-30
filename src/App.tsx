@@ -20,10 +20,6 @@ function App() {
   const mainRef = createRef<HTMLElement>();
   const introRef = createRef<HTMLElement>();
 
-  // const onViewPortfolio = () => {
-  //   window.scrollTo({ top: mainOffsetTop, behavior: 'smooth' });
-  // };
-
   // 높이값 구하는 로직
   useEffect(() => {
     if (mainRef && mainRef.current && introRef && introRef.current) {
@@ -61,7 +57,6 @@ function App() {
         <Intro
           introOffset={introOffset}
           introHeight={introHeight}
-          // onViewPortfolio={onViewPortfolio}
           ref={introRef}
           isIntro={isIntro}
         />

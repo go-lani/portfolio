@@ -69,14 +69,30 @@ const arrow = keyframes`
   }
 `;
 
-const ViewButton = styled.button<{ type: string }>`
+const arrowShow = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`;
+
+const ScrollPointer = styled.i`
   display: inline-block;
   position: absolute;
   bottom: 50px;
   left: 50%;
+  width: 45px;
   padding: 10px;
+  opacity: 0;
   transform: translateX(-50%);
-  animation: 1s ${arrow} infinite linear alternate;
+  animation: 1s ${arrow} infinite linear alternate,
+    0.3s ${arrowShow} 6s 1 linear forwards;
+  img {
+    width: 100%;
+  }
 `;
 
 type IntroProps = {
@@ -104,9 +120,9 @@ export default React.forwardRef<HTMLElement, IntroProps>(function Intro(
         <Typing subject="job" text="프론트엔드 개발자" />
         <Typing subject="information" text="이철환입니다." />
       </Greeting>
-      <ViewButton type="button" onClick={onViewPortfolio}>
-        <img src="./images/arr-white-bottom-24x14.png" alt="포트폴리오 보기" />
-      </ViewButton>
+      <ScrollPointer>
+        <img src="./images/mouse-ico-40x56.png" alt="포트폴리오 보기" />
+      </ScrollPointer>
     </IntroLayout>
   );
 });
