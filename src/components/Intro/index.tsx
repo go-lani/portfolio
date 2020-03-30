@@ -1,10 +1,14 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import A11yTitle from '../Common/A11yTitle';
 import Typing from '../Common/Typing';
 import media from '../../libs/MediaQuery';
 
-const IntroLayout = styled.section<{ introOffset: number; isIntro: boolean }>`
+const IntroLayout = styled.section<{
+  introOffset: number;
+  introHeight: number;
+  isIntro: boolean;
+}>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,6 +29,20 @@ const IntroLayout = styled.section<{ introOffset: number; isIntro: boolean }>`
   ${media.mobile`
     padding: 60px;
   `}
+
+  ${({ isIntro, introOffset, introHeight }) =>
+    isIntro &&
+    css`
+      &:after {
+        position: absolute;
+        top: 100%;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: ${(introHeight - introOffset) / introHeight};
+      }
+    `}
 `;
 
 const Greeting = styled.div`
@@ -65,15 +83,21 @@ type IntroProps = {
   ref: React.RefObject<HTMLElement>;
   onViewPortfolio?: () => void;
   introOffset: number;
+  introHeight: number;
   isIntro: boolean;
 };
 
 export default React.forwardRef<HTMLElement, IntroProps>(function Intro(
-  { introOffset, onViewPortfolio, isIntro },
+  { introOffset, introHeight, onViewPortfolio, isIntro },
   ref,
 ) {
   return (
-    <IntroLayout introOffset={introOffset} isIntro={isIntro} ref={ref}>
+    <IntroLayout
+      introOffset={introOffset}
+      introHeight={introHeight}
+      isIntro={isIntro}
+      ref={ref}
+    >
       <A11yTitle>인사말 영역</A11yTitle>
       <Greeting>
         <Typing subject="greeting" text="안녕하세요!" />

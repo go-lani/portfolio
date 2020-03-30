@@ -60,6 +60,7 @@ function App() {
       <Container contentsHeight={contentsHeight}>
         <Intro
           introOffset={introOffset}
+          introHeight={introHeight}
           // onViewPortfolio={onViewPortfolio}
           ref={introRef}
           isIntro={isIntro}

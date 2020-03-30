@@ -8,6 +8,7 @@ const MainLayout = styled.section<{ mainOffset: number }>`
   transform: ${({ mainOffset }) => `translateY(-${mainOffset}px)`};
   z-index: 2;
   background: red;
+  transition: all 0.3s;
 `;
 
 type MainProps = {
