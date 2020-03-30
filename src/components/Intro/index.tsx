@@ -93,13 +93,13 @@ const ScrollPointer = styled.i`
   }
 `;
 
-const Logo = styled.h1`
+const Logo = styled.span`
+  display: inline-block;
   overflow: hidden;
   width: 150px;
   height: 150px;
   border-radius: 50%;
   margin: 0 100px 0 0;
-  /* background: #fff; */
   img {
     width: 100%;
   }
@@ -124,7 +124,7 @@ export default React.forwardRef<HTMLElement, IntroProps>(function Intro(
       ref={ref}
       style={{ transform: `translateY(-${introOffset}px)` }}
     >
-      <A11yTitle>인사말 영역</A11yTitle>
+      <A11yTitle>인사말</A11yTitle>
       <Logo>
         <img src="./images/publee.png" alt="publee logo" />
       </Logo>

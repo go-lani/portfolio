@@ -4,6 +4,7 @@ import Intro from './components/Intro';
 import Main from './components/Main';
 import Information from './components/Information';
 import PortFolio from './components/PortFolio';
+import A11yTitle from './components/Common/A11yTitle';
 
 const Container = styled.div<{ contentsHeight: number | undefined }>`
   position: relative;
@@ -53,6 +54,7 @@ function App() {
   return (
     <>
       <Container contentsHeight={contentsHeight}>
+        <A11yTitle as="h1">이철환의 포트폴리오</A11yTitle>
         <Intro
           introOffset={introOffset}
           introHeight={introHeight}
