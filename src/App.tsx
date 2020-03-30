@@ -5,30 +5,48 @@ import Main from './components/Main';
 import Information from './components/Information';
 import PortFolio from './components/PortFolio';
 
-const Container = styled.div`
+const Container = styled.div<{ contentsHeight: number | undefined }>`
+  position: relative;
   width: 100vw;
-  padding: 100vh 0 0;
+  height: ${({ contentsHeight }) => contentsHeight && contentsHeight + 'px'};
 `;
 
 function App() {
-  const [currentOffset, setCurrentOffset] = useState<number>(0);
-  const [mainOffsetTop, setMainOffsetTop] = useState<number>();
+  const [isIntro, setIsintro] = useState<boolean>(true);
+  const [introHeight, setIntroHeight] = useState<number>(0);
+  const [contentsHeight, setContentsHeight] = useState<number>();
+  const [introOffset, setIntroOffset] = useState<number>(0);
+  const [mainOffset, setMainOffset] = useState<number>(0);
   const mainRef = createRef<HTMLElement>();
+  const introRef = createRef<HTMLElement>();
 
-  const onViewPortfolio = () => {
-    window.scrollTo({ top: mainOffsetTop, behavior: 'smooth' });
-  };
+  // const onViewPortfolio = () => {
+  //   window.scrollTo({ top: mainOffsetTop, behavior: 'smooth' });
+  // };
 
+  // 높이값 구하는 로직
   useEffect(() => {
-    if (mainRef && mainRef.current) {
-      setMainOffsetTop(mainRef.current.offsetTop);
+    if (mainRef && mainRef.current && introRef && introRef.current) {
+      setContentsHeight(
+        mainRef.current.clientHeight + introRef.current.clientHeight,
+      );
+      setIntroHeight(introRef.current.clientHeight);
     }
-  }, [mainRef]);
+  }, [contentsHeight, introRef, mainRef]);
 
   const onScroll = useCallback((e: Event): void => {
-    setCurrentOffset(Math.floor(window.scrollY));
-    if (window.scrollY > window.innerHeight) console.log('over');
+    setIntroOffset(Math.floor(window.scrollY));
   }, []);
+
+  useEffect(() => {
+    if (introOffset > introHeight) {
+      setIsintro(false);
+      setMainOffset(introOffset - introHeight);
+    } else {
+      setIsintro(true);
+      setMainOffset(0);
+    }
+  }, [introOffset, introHeight]);
 
   useEffect(() => {
     window.addEventListener('scroll', onScroll);
@@ -39,12 +57,14 @@ function App() {
 
   return (
     <>
-      <Container>
+      <Container contentsHeight={contentsHeight}>
         <Intro
-          currentOffset={currentOffset}
-          onViewPortfolio={onViewPortfolio}
+          introOffset={introOffset}
+          // onViewPortfolio={onViewPortfolio}
+          ref={introRef}
+          isIntro={isIntro}
         />
-        <Main ref={mainRef}>
+        <Main ref={mainRef} mainOffset={mainOffset}>
           <Information />
           <PortFolio />
         </Main>

@@ -4,12 +4,13 @@ import A11yTitle from '../Common/A11yTitle';
 import Typing from '../Common/Typing';
 import media from '../../libs/MediaQuery';
 
-const IntroLayout = styled.section<{ currentOffset: number }>`
+const IntroLayout = styled.section<{ introOffset: number; isIntro: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: ${({ currentOffset }) => `-${currentOffset}px`};
+  top: 0;
+  transform: ${({ introOffset }) => `translateY(-${introOffset}px)`};
   z-index: 10;
   width: 100vw;
   height: 100vh;
@@ -61,13 +62,18 @@ const ViewButton = styled.button<{ type: string }>`
 `;
 
 type IntroProps = {
-  onViewPortfolio: () => void;
-  currentOffset: number;
+  ref: React.RefObject<HTMLElement>;
+  onViewPortfolio?: () => void;
+  introOffset: number;
+  isIntro: boolean;
 };
 
-export default function Intro({ currentOffset, onViewPortfolio }: IntroProps) {
+export default React.forwardRef<HTMLElement, IntroProps>(function Intro(
+  { introOffset, onViewPortfolio, isIntro },
+  ref,
+) {
   return (
-    <IntroLayout currentOffset={currentOffset}>
+    <IntroLayout introOffset={introOffset} isIntro={isIntro} ref={ref}>
       <A11yTitle>인사말 영역</A11yTitle>
       <Greeting>
         <Typing subject="greeting" text="안녕하세요!" />
@@ -79,4 +85,4 @@ export default function Intro({ currentOffset, onViewPortfolio }: IntroProps) {
       </ViewButton>
     </IntroLayout>
   );
-}
+});
