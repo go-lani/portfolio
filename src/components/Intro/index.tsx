@@ -14,13 +14,11 @@ const IntroLayout = styled.section<{
   align-items: center;
   position: fixed;
   top: 0;
-  transform: ${({ introOffset }) => `translateY(-${introOffset}px)`};
   z-index: 10;
   width: 100vw;
   height: 100vh;
-  background: #000;
+  background: #1b1817;
   padding: 200px;
-  transition: all 0.3s;
 
   ${media.tablet`
     padding: 100px;
@@ -95,16 +93,27 @@ const ScrollPointer = styled.i`
   }
 `;
 
+const Logo = styled.h1`
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 100px 0 0;
+  /* background: #fff; */
+  img {
+    width: 100%;
+  }
+`;
+
 type IntroProps = {
   ref: React.RefObject<HTMLElement>;
-  onViewPortfolio?: () => void;
   introOffset: number;
   introHeight: number;
   isIntro: boolean;
 };
 
 export default React.forwardRef<HTMLElement, IntroProps>(function Intro(
-  { introOffset, introHeight, onViewPortfolio, isIntro },
+  { introOffset, introHeight, isIntro },
   ref,
 ) {
   return (
@@ -113,8 +122,12 @@ export default React.forwardRef<HTMLElement, IntroProps>(function Intro(
       introHeight={introHeight}
       isIntro={isIntro}
       ref={ref}
+      style={{ transform: `translateY(-${introOffset}px)` }}
     >
       <A11yTitle>인사말 영역</A11yTitle>
+      <Logo>
+        <img src="./images/publee.png" alt="publee logo" />
+      </Logo>
       <Greeting>
         <Typing subject="greeting" text="안녕하세요!" />
         <Typing subject="job" text="프론트엔드 개발자" />

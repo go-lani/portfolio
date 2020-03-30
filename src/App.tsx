@@ -20,7 +20,6 @@ function App() {
   const mainRef = createRef<HTMLElement>();
   const introRef = createRef<HTMLElement>();
 
-  // 높이값 구하는 로직
   useEffect(() => {
     if (mainRef && mainRef.current && introRef && introRef.current) {
       setContentsHeight(

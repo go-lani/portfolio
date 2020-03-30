@@ -2,13 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import A11yTitle from '../Common/A11yTitle';
 
-const MainLayout = styled.section<{ mainOffset: number }>`
+const MainLayout = styled.section`
   position: fixed;
   top: 0;
-  transform: ${({ mainOffset }) => `translateY(-${mainOffset}px)`};
   z-index: 2;
-  background: red;
-  transition: all 0.3s;
+  width: 100%;
+  background: #fff;
 `;
 
 type MainProps = {
@@ -22,7 +21,7 @@ export default React.forwardRef<HTMLElement, MainProps>(function Main(
   ref,
 ): JSX.Element {
   return (
-    <MainLayout ref={ref} mainOffset={mainOffset}>
+    <MainLayout ref={ref} style={{ transform: `translateY(-${mainOffset}px)` }}>
       <A11yTitle>메인 컨텐츠</A11yTitle>
       {children}
     </MainLayout>

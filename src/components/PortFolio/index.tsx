@@ -7,7 +7,6 @@ import personalProjectData from '../../datas/personalProject.json';
 const PortFolioLayout = styled.section`
   position: relative;
   z-index: 2;
-  background: #334bad;
   min-height: 100vh;
 `;
 

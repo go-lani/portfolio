@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const InformationLayout = styled.section`
   min-height: 100vh;
+  padding: 100px;
 `;
 
 export default function Information() {
