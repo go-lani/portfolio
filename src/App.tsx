@@ -9,7 +9,7 @@ import Menu from './components/Menu';
 
 const Container = styled.div<{ contentsHeight: number | undefined }>`
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: ${({ contentsHeight }) => contentsHeight && contentsHeight + 'px'};
 `;
 

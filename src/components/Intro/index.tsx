@@ -15,7 +15,7 @@ const IntroLayout = styled.section<{
   position: fixed;
   top: 0;
   z-index: 2;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background: #1b1817;
   padding: 200px;
@@ -25,7 +25,8 @@ const IntroLayout = styled.section<{
   `}
 
   ${media.mobile`
-    padding: 60px;
+    flex-direction: column;
+    padding: 30px;
   `}
 
   ${({ isIntro, mainScroll, introHeight }) =>
@@ -50,7 +51,7 @@ const Greeting = styled.div`
   color: #fff;
 
   ${media.desktop`
-    min-width: 500px;
+    min-width: 385px;
   `}
 
   ${media.tablet`
@@ -88,9 +89,14 @@ const ScrollPointer = styled.i`
   transform: translateX(-50%);
   animation: 1s ${arrow} infinite linear alternate,
     0.3s ${arrowShow} 6s 1 linear forwards;
+
   img {
     width: 100%;
   }
+
+  ${media.mobile`
+    animation: none;
+  `}
 `;
 
 const Logo = styled.span`
@@ -100,9 +106,14 @@ const Logo = styled.span`
   height: 150px;
   border-radius: 50%;
   margin: 0 100px 0 0;
+
   img {
     width: 100%;
   }
+
+  ${media.mobile`
+    margin: 0 0 50px;
+  `}
 `;
 
 type IntroProps = {

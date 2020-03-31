@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import MenuBox from './MenuBox';
+import media from '../../libs/MediaQuery';
 
 const MenuTrigger = styled.button`
   display: inline-block;
@@ -10,6 +11,11 @@ const MenuTrigger = styled.button`
   z-index: 4;
   width: 30px;
   height: 30px;
+
+  ${media.mobile`
+    top: 15px;
+    left: 15px;
+  `}
 `;
 
 const Trigger = styled.span<{ menuActive: boolean; isIntro: boolean }>`
