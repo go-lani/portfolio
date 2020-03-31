@@ -1,5 +1,5 @@
 import React, { useState, createRef, useEffect, useCallback } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import Intro from './components/Intro';
 import Main from './components/Main';
 import Information from './components/Information';
@@ -20,24 +20,31 @@ function App() {
   const [mainScroll, setMainScroll] = useState<number>(0);
   const [contentScroll, setContentScroll] = useState<number>(0);
   const [menuActive, setMenuActive] = useState<boolean>(false);
-  const mainRef = createRef<HTMLElement>();
+  const [infoHeight, setInfoHeight] = useState<number>(0);
   const introRef = createRef<HTMLElement>();
+  const contentRef = createRef<HTMLElement>();
+  const infoRef = createRef<HTMLElement>();
 
   useEffect(() => {
-    if (mainRef && mainRef.current && introRef && introRef.current) {
+    if (contentRef && contentRef.current && introRef && introRef.current) {
       setContentsHeight(
-        mainRef.current.clientHeight + introRef.current.clientHeight,
+        contentRef.current.clientHeight + introRef.current.clientHeight,
       );
+    }
+    if (introRef && introRef.current) {
       setIntroHeight(introRef.current.clientHeight);
     }
-  }, [contentsHeight, introRef, mainRef]);
+    if (infoRef && infoRef.current) {
+      setInfoHeight(infoRef.current.clientHeight);
+    }
+  }, [contentsHeight, introRef, contentRef, infoRef]);
 
   const onScroll = useCallback((e: Event): void => {
     setMainScroll(Math.floor(window.scrollY));
   }, []);
 
   useEffect(() => {
-    if (mainScroll > introHeight) {
+    if (mainScroll >= introHeight) {
       setIsintro(false);
       setContentScroll(mainScroll - introHeight);
     } else {
@@ -54,25 +61,46 @@ function App() {
   }, [onScroll]);
 
   const menuToggle = () => {
-    // setIsintro(false);
-    // setMainScroll(introHeight);
-    // window.scrollTo(0, introHeight);
     setMenuActive(!menuActive);
+  };
+
+  const move = (scrolling: number) => {
+    setContentScroll(scrolling);
+    window.scrollTo(0, scrolling);
+    setMenuActive(!menuActive);
+  };
+
+  const moveToSection = (category: string) => {
+    setIsintro(false);
+
+    if (category === 'HOME') {
+      move(0);
+      setIsintro(true);
+    } else if (category === 'INFO') {
+      move(introHeight);
+    } else if (category === 'PROJECT') {
+      move(introHeight + infoHeight);
+    }
   };
 
   return (
     <>
       <Container contentsHeight={contentsHeight}>
         <A11yTitle as="h1">이철환의 포트폴리오</A11yTitle>
-        <Menu menuActive={menuActive} menuToggle={menuToggle} />
+        <Menu
+          moveToSection={moveToSection}
+          menuActive={menuActive}
+          menuToggle={menuToggle}
+          isIntro={isIntro}
+        />
         <Intro
           mainScroll={mainScroll}
           introHeight={introHeight}
           ref={introRef}
           isIntro={isIntro}
         />
-        <Main ref={mainRef} contentScroll={contentScroll}>
-          <Information />
+        <Main ref={contentRef} contentScroll={contentScroll}>
+          <Information ref={infoRef} />
           <PortFolio />
         </Main>
       </Container>

@@ -6,11 +6,17 @@ const InformationLayout = styled.section`
   padding: 100px;
 `;
 
-export default function Information() {
-  return (
-    <InformationLayout>
-      <h3>이철환 정보</h3>
-      <div>Skills</div>
-    </InformationLayout>
-  );
-}
+type InformationProps = {
+  ref: React.RefObject<HTMLElement>;
+};
+
+export default React.forwardRef<HTMLElement, InformationProps>(
+  function Information(props, ref) {
+    return (
+      <InformationLayout ref={ref}>
+        <h3>이철환 정보</h3>
+        <div>Skills</div>
+      </InformationLayout>
+    );
+  },
+);
