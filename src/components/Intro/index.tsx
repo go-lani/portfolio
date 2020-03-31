@@ -5,7 +5,7 @@ import Typing from '../Common/Typing';
 import media from '../../libs/MediaQuery';
 
 const IntroLayout = styled.section<{
-  introOffset: number;
+  mainScroll: number;
   introHeight: number;
   isIntro: boolean;
 }>`
@@ -14,7 +14,7 @@ const IntroLayout = styled.section<{
   align-items: center;
   position: fixed;
   top: 0;
-  z-index: 10;
+  z-index: 2;
   width: 100vw;
   height: 100vh;
   background: #1b1817;
@@ -28,7 +28,7 @@ const IntroLayout = styled.section<{
     padding: 60px;
   `}
 
-  ${({ isIntro, introOffset, introHeight }) =>
+  ${({ isIntro, mainScroll, introHeight }) =>
     isIntro &&
     css`
       &:after {
@@ -38,7 +38,7 @@ const IntroLayout = styled.section<{
         width: 100%;
         height: 100%;
         background: #000;
-        opacity: ${(introHeight - introOffset) / introHeight};
+        opacity: ${(introHeight - mainScroll) / introHeight};
       }
     `}
 `;
@@ -107,22 +107,22 @@ const Logo = styled.span`
 
 type IntroProps = {
   ref: React.RefObject<HTMLElement>;
-  introOffset: number;
+  mainScroll: number;
   introHeight: number;
   isIntro: boolean;
 };
 
 export default React.forwardRef<HTMLElement, IntroProps>(function Intro(
-  { introOffset, introHeight, isIntro },
+  { mainScroll, introHeight, isIntro },
   ref,
 ) {
   return (
     <IntroLayout
-      introOffset={introOffset}
+      mainScroll={mainScroll}
       introHeight={introHeight}
       isIntro={isIntro}
       ref={ref}
-      style={{ transform: `translateY(-${introOffset}px)` }}
+      style={{ transform: `translateY(-${mainScroll}px)` }}
     >
       <A11yTitle>인사말</A11yTitle>
       <Logo>

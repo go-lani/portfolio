@@ -5,23 +5,26 @@ import A11yTitle from '../Common/A11yTitle';
 const MainLayout = styled.section`
   position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 1;
   width: 100%;
   background: #fff;
 `;
 
 type MainProps = {
-  mainOffset: number;
+  contentScroll: number;
   children: JSX.Element[];
   ref: React.RefObject<HTMLElement>;
 };
 
 export default React.forwardRef<HTMLElement, MainProps>(function Main(
-  { mainOffset, children },
+  { contentScroll, children },
   ref,
-): JSX.Element {
+) {
   return (
-    <MainLayout ref={ref} style={{ transform: `translateY(-${mainOffset}px)` }}>
+    <MainLayout
+      ref={ref}
+      style={{ transform: `translateY(-${contentScroll}px)` }}
+    >
       <A11yTitle>메인 컨텐츠</A11yTitle>
       {children}
     </MainLayout>
