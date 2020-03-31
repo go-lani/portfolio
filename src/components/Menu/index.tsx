@@ -37,6 +37,7 @@ const Trigger = styled.span<{ menuActive: boolean; isIntro: boolean }>`
     text-indent: -9999em;
     transform: scaleX(1);
     transition: all 0.3s;
+            background: #fff;
 
     ${({ menuActive }) =>
       menuActive &&
@@ -45,14 +46,14 @@ const Trigger = styled.span<{ menuActive: boolean; isIntro: boolean }>`
         opacity: 0;
       `}
 
-    ${({ isIntro }) =>
+    /* ${({ isIntro }) =>
       isIntro
         ? css`
             background: #fff;
           `
         : css`
             background: #000;
-          `}
+          `} */
   }
 
   &:before {
@@ -62,16 +63,17 @@ const Trigger = styled.span<{ menuActive: boolean; isIntro: boolean }>`
     left: 0;
     width: 30px;
     height: 2px;
+            background: #fff;
     transition: all 0.3s;
 
-    ${({ isIntro }) =>
+    /* ${({ isIntro }) =>
       isIntro
         ? css`
             background: #fff;
           `
         : css`
             background: #000;
-          `}
+          `} */
 
     ${({ menuActive }) =>
       menuActive &&
@@ -88,16 +90,9 @@ const Trigger = styled.span<{ menuActive: boolean; isIntro: boolean }>`
     left: 0;
     width: 30px;
     height: 2px;
+    background: #fff;
     transition: all 0.3s;
 
-    ${({ isIntro }) =>
-      isIntro
-        ? css`
-            background: #fff;
-          `
-        : css`
-            background: #000;
-          `}
 
     ${({ menuActive }) =>
       menuActive &&

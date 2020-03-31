@@ -7,7 +7,7 @@ const MainLayout = styled.section`
   top: 0;
   z-index: 1;
   width: 100%;
-  background: #fff;
+  background: #d8d8d8;
 `;
 
 type MainProps = {

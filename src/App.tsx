@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import Intro from './components/Intro';
 import Main from './components/Main';
 import Information from './components/Information';
-import PortFolio from './components/PortFolio';
-import A11yTitle from './components/Common/A11yTitle';
+import Project from './components/Project';
+import Skill from './components/Skill';
 import Menu from './components/Menu';
+import A11yTitle from './components/Common/A11yTitle';
 
 const Container = styled.div<{ contentsHeight: number | undefined }>`
   position: relative;
@@ -14,16 +15,18 @@ const Container = styled.div<{ contentsHeight: number | undefined }>`
 `;
 
 function App() {
+  const [menuActive, setMenuActive] = useState<boolean>(false);
   const [isIntro, setIsintro] = useState<boolean>(true);
-  const [introHeight, setIntroHeight] = useState<number>(0);
-  const [contentsHeight, setContentsHeight] = useState<number>();
   const [mainScroll, setMainScroll] = useState<number>(0);
   const [contentScroll, setContentScroll] = useState<number>(0);
-  const [menuActive, setMenuActive] = useState<boolean>(false);
+  const [introHeight, setIntroHeight] = useState<number>(0);
+  const [contentsHeight, setContentsHeight] = useState<number>();
   const [infoHeight, setInfoHeight] = useState<number>(0);
+  const [skillHeight, setSkillHeight] = useState<number>(0);
   const introRef = createRef<HTMLElement>();
   const contentRef = createRef<HTMLElement>();
   const infoRef = createRef<HTMLElement>();
+  const skillRef = createRef<HTMLElement>();
 
   useEffect(() => {
     if (contentRef && contentRef.current && introRef && introRef.current) {
@@ -31,13 +34,12 @@ function App() {
         contentRef.current.clientHeight + introRef.current.clientHeight,
       );
     }
-    if (introRef && introRef.current) {
+    if (introRef && introRef.current)
       setIntroHeight(introRef.current.clientHeight);
-    }
-    if (infoRef && infoRef.current) {
-      setInfoHeight(infoRef.current.clientHeight);
-    }
-  }, [contentsHeight, introRef, contentRef, infoRef]);
+    if (infoRef && infoRef.current) setInfoHeight(infoRef.current.clientHeight);
+    if (skillRef && skillRef.current)
+      setSkillHeight(skillRef.current.clientHeight);
+  }, [contentsHeight, introRef, contentRef, infoRef, skillRef]);
 
   const onScroll = useCallback((e: Event): void => {
     setMainScroll(Math.floor(window.scrollY));
@@ -78,8 +80,10 @@ function App() {
       setIsintro(true);
     } else if (category === 'INFO') {
       move(introHeight);
-    } else if (category === 'PROJECT') {
+    } else if (category === 'SKILL') {
       move(introHeight + infoHeight);
+    } else if (category === 'PROJECT') {
+      move(introHeight + infoHeight + skillHeight);
     }
   };
 
@@ -101,7 +105,8 @@ function App() {
         />
         <Main ref={contentRef} contentScroll={contentScroll}>
           <Information ref={infoRef} />
-          <PortFolio />
+          <Skill ref={skillRef} />
+          <Project />
         </Main>
       </Container>
     </>

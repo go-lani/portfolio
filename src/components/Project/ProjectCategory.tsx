@@ -6,10 +6,16 @@ import ProjectItem from './ProjectItem';
 const ContentBox = styled.div``;
 
 const Title = styled.p`
-  font-size: 3rem;
+  font-size: 3.5rem;
+  color: #fff;
+  opacity: 0.5;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 `;
 
-const ProjectList = styled.ul``;
+const ProjectList = styled.ul`
+  font-size: 1.4rem;
+  color: #222;
+`;
 
 type dataType = {
   id: number;
@@ -23,7 +29,7 @@ type PortFolioProps = {
   category: string;
 };
 
-export default function Project({ category, datas }: PortFolioProps) {
+export default function ProjectCategory({ category, datas }: PortFolioProps) {
   return (
     <ContentBox>
       <Title>{category} Project</Title>
