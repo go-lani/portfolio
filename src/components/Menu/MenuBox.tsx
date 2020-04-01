@@ -69,7 +69,7 @@ type MenuProps = {
   moveToSection: (category: string) => void;
 };
 
-const menuItems = ['HOME', 'INFO', 'SKILL', 'PROJECT'];
+const menuItems = ['HOME', 'ABOUT', 'SKILL', 'PROJECT'];
 
 export default function MenuBox({
   moveToSection,

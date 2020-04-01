@@ -2,7 +2,7 @@ import React, { useState, createRef, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import Intro from './components/Intro';
 import Main from './components/Main';
-import Information from './components/Information';
+import About from './components/About';
 import Project from './components/Project';
 import Skill from './components/Skill';
 import Menu from './components/Menu';
@@ -23,11 +23,11 @@ function App() {
   const [contentScroll, setContentScroll] = useState<number>(0);
   const [introHeight, setIntroHeight] = useState<number>(0);
   const [contentsHeight, setContentsHeight] = useState<number>();
-  const [infoHeight, setInfoHeight] = useState<number>(0);
+  const [aboutHeight, setAboutHeight] = useState<number>(0);
   const [skillHeight, setSkillHeight] = useState<number>(0);
   const introRef = createRef<HTMLElement>();
   const contentRef = createRef<HTMLElement>();
-  const infoRef = createRef<HTMLElement>();
+  const aboutRef = createRef<HTMLElement>();
   const skillRef = createRef<HTMLElement>();
 
   useEffect(() => {
@@ -42,10 +42,11 @@ function App() {
     }
     if (introRef && introRef.current)
       setIntroHeight(introRef.current.clientHeight);
-    if (infoRef && infoRef.current) setInfoHeight(infoRef.current.clientHeight);
+    if (aboutRef && aboutRef.current)
+      setAboutHeight(aboutRef.current.clientHeight);
     if (skillRef && skillRef.current)
       setSkillHeight(skillRef.current.clientHeight);
-  }, [contentsHeight, introRef, contentRef, infoRef, skillRef]);
+  }, [contentsHeight, introRef, contentRef, aboutRef, skillRef]);
 
   const onScroll = useCallback((e: Event): void => {
     setMainScroll(Math.floor(window.scrollY));
@@ -84,12 +85,12 @@ function App() {
     if (category === 'HOME') {
       move(0);
       setIsintro(true);
-    } else if (category === 'INFO') {
+    } else if (category === 'ABOUT') {
       move(introHeight);
     } else if (category === 'SKILL') {
-      move(introHeight + infoHeight);
+      move(introHeight + aboutHeight);
     } else if (category === 'PROJECT') {
-      move(introHeight + infoHeight + skillHeight);
+      move(introHeight + aboutHeight + skillHeight);
     }
   };
 
@@ -111,7 +112,7 @@ function App() {
           isIntro={isIntro}
         />
         <Main ref={contentRef} contentScroll={contentScroll}>
-          <Information ref={infoRef} />
+          <About ref={aboutRef} />
           <Skill ref={skillRef} />
           <Project />
         </Main>
