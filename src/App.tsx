@@ -7,6 +7,7 @@ import Project from './components/Project';
 import Skill from './components/Skill';
 import Menu from './components/Menu';
 import A11yTitle from './components/Common/A11yTitle';
+import Loading from './components/Loading';
 
 const Container = styled.div<{ contentsHeight: number | undefined }>`
   position: relative;
@@ -15,6 +16,7 @@ const Container = styled.div<{ contentsHeight: number | undefined }>`
 `;
 
 function App() {
+  const [loading, setLoading] = useState<boolean>(true);
   const [menuActive, setMenuActive] = useState<boolean>(false);
   const [isIntro, setIsintro] = useState<boolean>(true);
   const [mainScroll, setMainScroll] = useState<number>(0);
@@ -27,6 +29,10 @@ function App() {
   const contentRef = createRef<HTMLElement>();
   const infoRef = createRef<HTMLElement>();
   const skillRef = createRef<HTMLElement>();
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 1700);
+  }, []);
 
   useEffect(() => {
     if (contentRef && contentRef.current && introRef && introRef.current) {
@@ -89,6 +95,7 @@ function App() {
 
   return (
     <>
+      <Loading loading={loading} />
       <Container contentsHeight={contentsHeight}>
         <A11yTitle as="h1">이철환의 포트폴리오</A11yTitle>
         <Menu
