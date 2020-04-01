@@ -22,7 +22,7 @@ const MainLayout = styled.section`
 
 type MainProps = {
   contentScroll: number;
-  children: JSX.Element[];
+  children: JSX.Element | JSX.Element[];
   ref: React.RefObject<HTMLElement>;
 };
 

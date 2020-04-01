@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ProjectCategory from './ProjectCategory';
-import teamProjectData from '../../datas/teamProject.json';
-import personalProjectData from '../../datas/personalProject.json';
+import projectDatas from '../../datas/project.json';
 import CategoryTitle from '../Common/CategoryTitle';
 import media from '../../libs/MediaQuery';
 
@@ -15,12 +14,17 @@ const ProjectLayout = styled.section`
   `}
 `;
 
+const teamProjectDatas = projectDatas.filter(data => data.type === 'team');
+const personalProjectDatas = projectDatas.filter(
+  data => data.type === 'personal',
+);
+
 export default function Project() {
   return (
     <ProjectLayout>
       <CategoryTitle title="Project" />
-      <ProjectCategory category="Team" datas={teamProjectData} />
-      <ProjectCategory category="Personal" datas={personalProjectData} />
+      <ProjectCategory category="Team" datas={teamProjectDatas} />
+      <ProjectCategory category="Personal" datas={personalProjectDatas} />
     </ProjectLayout>
   );
 }

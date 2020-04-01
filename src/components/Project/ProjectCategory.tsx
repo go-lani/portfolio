@@ -2,15 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 import ProjectItem from './ProjectItem';
+import CategorySubTitle from '../Common/CategorySubTitle';
 
 const ContentBox = styled.div``;
-
-const Title = styled.p`
-  font-size: 3.5rem;
-  color: #fff;
-  opacity: 0.5;
-  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-`;
 
 const ProjectList = styled.ul`
   font-size: 1.4rem;
@@ -32,7 +26,7 @@ type PortFolioProps = {
 export default function ProjectCategory({ category, datas }: PortFolioProps) {
   return (
     <ContentBox>
-      <Title>{category} Project</Title>
+      <CategorySubTitle>{`${category} Project`}</CategorySubTitle>
       <ProjectList>
         {datas.map(data => (
           <ProjectItem key={uuidv4()} {...data} />
