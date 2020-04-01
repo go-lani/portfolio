@@ -5,10 +5,10 @@ import media from '../../libs/MediaQuery';
 
 const SkillLayout = styled.section`
   min-height: 100vh;
-  padding: 100px;
+  padding: 100px 0;
 
   ${media.mobile`
-    padding: 60px;
+    padding: 30px 0;
   `}
 `;
 

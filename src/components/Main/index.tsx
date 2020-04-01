@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import A11yTitle from '../Common/A11yTitle';
+import media from '../../libs/MediaQuery';
 
 const MainLayout = styled.section`
   position: fixed;
@@ -8,6 +9,15 @@ const MainLayout = styled.section`
   z-index: 1;
   width: 100%;
   background: #d8d8d8;
+  padding: 0 100px;
+
+  ${media.tablet`
+    padding: 0 60px;
+  `}
+
+  ${media.mobile`
+    padding: 0 30px;
+  `}
 `;
 
 type MainProps = {

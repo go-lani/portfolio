@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import media from '../../libs/MediaQuery';
 
 const Title = styled.h3`
+  margin: 0 0 50px;
   font-weight: 700;
   font-size: 8rem;
   color: #fff;

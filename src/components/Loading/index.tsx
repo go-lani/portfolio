@@ -40,14 +40,6 @@ const Shadow = styled.div<{ active: boolean }>`
     `}
 `;
 
-// const TextBox = styled.div`
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   width: 100%;
-//   transform: translate(-50%, -50%);
-// `;
-
 const showText = keyframes`
   0% {
     top: calc(50% + 20px);
@@ -95,12 +87,12 @@ type LoadingProps = {
 
 export default function Loading({ loading }: LoadingProps) {
   return (
-    <>
+    <div>
       <LoadingLayout active={loading}>
         <First>Lee Cheol Hwan</First>
         <Second>PortFolio</Second>
       </LoadingLayout>
       <Shadow active={loading} />
-    </>
+    </div>
   );
 }
