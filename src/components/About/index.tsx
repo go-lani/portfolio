@@ -14,7 +14,8 @@ const AboutLayout = styled.section`
 const InfoArea = styled.div`
   display: flex;
   padding: 50px;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
   ${media.mobile`
     align-items: center;
@@ -50,7 +51,6 @@ const Info = styled.div`
   .developer {
     font-weight: 700;
     font-size: 2rem;
-    margin: 0 0 10px;
     strong {
       display: inline-block;
       color: #e22548;

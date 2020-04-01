@@ -5,7 +5,8 @@
     "title": "HTML",
     "level": 85,
     "description": "HTML과 HTML5의 태그를 활용할 수 있고, Semantic Markup을 이해하고 있으며, HTML을 활용하여 서비스한 경험이 있습니다. 의미를 가진 마크업 개발을 지향합니다.",
-    "logo": "./images/html-logo.png"
+    "logo": "./images/html-logo.png",
+    "color": "#df4720"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "title": "CSS/SCSS",
     "level": 85,
     "description": "다양한 Layout 기법을 활용하여 원하는 디자인을 적용할 수 있습니다. 애니메이션을 통한 다양한 모션과 미디어 쿼리를 활용한 반응형 웹을 구현할 수 있습니다. CSS와 SCSS을 활용하여 서비스한 경험이 있습니다.",
-    "logo": "./images/css-logo.png"
+    "logo": "./images/css-logo.png",
+    "color": "#006eba"
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "title": "Javascript",
     "level": 80,
     "description": "스코프, 호이스팅 그리고 클로저 등 자바스크립트의 핵심 개념을 이해하고 있으며, ES6+ 문법을 활용하여 Modern Javascript 개발을 지향하고 있습니다.",
-    "logo": "./images/js-logo.png"
+    "logo": "./images/js-logo.png",
+    "color": "#f9d91f"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "title": "React",
     "level": 75,
     "description": "Class Component와 Functional Component를 다룰 수 있으며, Hooks를 활용하여 프로젝트를 진행한 경험이 있습니다. 재사용성 및 가독성이 좋은 코드 개발을 지향하고 있습니다.",
-    "logo": "./images/react-logo.png"
+    "logo": "./images/react-logo.png",
+    "color": "#f9d91f"
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "title": "Redux/Redux-Saga",
     "level": 60,
     "description": "Ducks 패턴을 활용하여 상태 관리를 할 수 있고, 비동기와 같은 사이드 이펙트를 Redux-Saga 미들웨어를 활용하여 관리할 수 있습니다.",
-    "logo": "./images/reduc-logo.png"
+    "logo": "./images/redux-logo.png",
+    "color": "#61dafb"
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "title": "Styled Components",
     "level": 75,
     "description": "Props를 활용하여 상황에 맞는 스타일링을 구현할 수 있고, 재사용이 가능한 컴포넌트를 구현하는 것을 지향합니다.",
-    "logo": "./images/sc-logo.png"
+    "logo": "./images/sc-logo.png",
+    "color": "#61dafb"
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@
     "title": "TypeScript",
     "level": 20,
     "description": "동적 타입 언어인 자바스크립트를 컴파일링 과정을 통해 정적 타입으로 강제하여 정적 타입으로 사용할 수 있게 해주며 유지보수성과 개발자의 실수를 줄일 수 있다고 하여 관심이 생겼고 뿐만 아니라 IDE 환경에서 자동완성 및 타입 환경을 체크해주므로 개발이 편리해진다고 하여 학습하고 있고, 현재 포트폴리오 사이트 구축에 Typescript를 사용하였습니다.",
-    "logo": "./images/typescript-logo.png"
+    "logo": "./images/typescript-logo.png",
+    "color": "#007acc"
   },
   {
     "id": 8,
@@ -61,7 +68,8 @@
     "title": "Git/Github",
     "level": 70,
     "description": "저장소를 활용하여 프로젝트 작업물을 관리하고 있으며, git flow의 활용하여 팀 프로젝트 및 개인 프로젝트를 진행한 경험이 있습니다.",
-    "logo": "./images/github.png"
+    "logo": "./images/github.png",
+    "color": "#000000"
   },
   {
     "id": 9,
@@ -69,6 +77,7 @@
     "title": "SVN",
     "level": 60,
     "description": "SVN을 활용하여 기획자, 디자이너 및 개발자와 문서관리 및 작업물 관리를 하며 협업한 경험이 있습니다.",
-    "logo": "./images/svn-logo.png"
+    "logo": "./images/svn-logo.png",
+    "color": "#809bcc"
   }
 ]
