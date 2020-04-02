@@ -5,7 +5,8 @@
     "title": "Festa",
     "description": "Festa!",
     "period": "2020.03.09 ~ 2020.03.13",
-    "thumb": "./images/festa-thumb.jpg"
+    "thumb": "./images/festa-thumb.jpg",
+    "skills": ["HTML", "CSS", "Javascript", "React", "Styled-Components"]
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "title": "FastScanner",
     "description": "실시간 항공권 예약 서비스",
     "period": "2020.02.05 ~ 2020.02.28",
-    "thumb": "./images/fastscanner-thumb.jpg"
+    "thumb": "./images/fastscanner-thumb.jpg",
+    "skills": ["HTML", "CSS", "Javascript", "React", "Redux/Redux-Saga", "Styled-Components"]
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "title": "Netflix",
     "description": "영화/TV 프로그램의 콘텐츠에 대한 정보 제공 서비스",
     "period": "2020.01.22(8시간) / 2020.03.05 ~ 진행중(리팩토링)",
-    "thumb": "./images/complix-thumb.jpg"
+    "thumb": "./images/complix-thumb.jpg",
+    "skills": ["HTML", "CSS", "Javascript", "React", "Redux/Redux-Saga", "Styled-Components"]
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "title": "Trello",
     "description": "Trello Clone",
     "period": "2019.11.12 ~ 2019.11.22",
-    "thumb": "./images/onello-thumb.jpg"
+    "thumb": "./images/onello-thumb.jpg",
+    "skills": ["HTML", "CSS", "Javascript"]
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "title": "PortFolio",
     "description": "포트폴리오 사이트",
     "period": "2020.03.24 ~ ",
-    "thumb": "./images/portfolio-thumb.jpg"
+    "thumb": "./images/portfolio-thumb.jpg",
+    "skills": ["HTML", "CSS", "Javascript", "React", "Typescript", "Styled-Components"]
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "title": "Books Reivew",
     "description": "개발서적에 대한 리뷰와 읽을 책을 기록하는 웹 애플리케이션",
     "period": "2020.01.17 ~ 2020.02.11",
-    "thumb": "./images/books-thumb.jpg"
+    "thumb": "./images/books-thumb.jpg",
+    "skills": ["HTML", "CSS", "Javascript", "React", "Redux/Redux-Saga", "Styled-Components"]
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@
     "title": "Youtube",
     "description": "YoutubeAPI를 활용한 Youtube clone",
     "period": "2019.12.02 ~ 2019.12.22",
-    "thumb": "./images/youtube-thumb.jpg"
+    "thumb": "./images/youtube-thumb.jpg",
+    "skills": ["HTML", "CSS", "Javascript", "React", "Redux"]
   },
   {
     "id": 8,
@@ -61,7 +68,8 @@
     "title": "TodoList",
     "description": "할 일 관리 앱",
     "period": "2019.10.31 ~ 2019.11.06 / 2020.01.06 ~ 2020.01.08",
-    "thumb": "./images/todolist-thumb.jpg"
+    "thumb": "./images/todolist-thumb.jpg",
+    "skills": ["HTML", "CSS", "Javascript", "React"]
   }
 
 ]

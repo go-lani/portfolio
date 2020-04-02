@@ -13,6 +13,8 @@ const AboutLayout = styled.section`
 
 const InfoArea = styled.div`
   display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 50px;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

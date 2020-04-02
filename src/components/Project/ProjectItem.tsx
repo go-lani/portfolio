@@ -1,16 +1,96 @@
 import React from 'react';
 import styled from 'styled-components';
+import { v4 as uuidv4 } from 'uuid';
 import media from '../../libs/MediaQuery';
 
 const Item = styled.li`
-  position: relative;
   width: 45%;
-  height: auto;
   margin-top: -5%;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-  transition: all 0.5s;
   cursor: pointer;
   clear: both;
+
+  &:nth-child(odd) {
+    float: left;
+    margin-left: 0;
+
+    > div {
+      > span {
+        top: 20px;
+        left: -60px;
+      }
+    }
+  }
+
+  &:nth-child(even) {
+    float: right;
+    > div {
+      > span {
+        top: 40px;
+        right: -80px;
+        transform: rotate(90deg);
+        transform-origin: center 0;
+      }
+    }
+  }
+
+  &:first-child {
+    margin-top: 0;
+    transform: none;
+  }
+
+  &:hover {
+    > div {
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0);
+
+      > span {
+        > span {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      &:after {
+        background: rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+
+  ${media.mobile`
+    width: 100%;
+    margin: 0 0 100px;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &:nth-child(even) {
+      float: none;
+
+      > div {
+        > span {
+          right: -70px;
+        }
+      }
+    }
+    &:nth-child(odd) {
+      float: none;
+
+      > div {
+        > span {
+          top: 20px;
+          left: -30px;
+        }
+      }
+    }
+  `}
+`;
+
+const Visual = styled.div`
+  position: relative;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  transition: all 0.5s;
 
   > span {
     position: absolute;
@@ -51,32 +131,6 @@ const Item = styled.li`
     width: 100%;
   }
 
-  &:nth-child(odd) {
-    float: left;
-    margin-left: 0;
-
-    > span {
-      top: 20px;
-      left: -60px;
-    }
-  }
-
-  &:nth-child(even) {
-    float: right;
-
-    > span {
-      top: 40px;
-      right: -80px;
-      transform: rotate(90deg);
-      transform-origin: center 0;
-    }
-  }
-
-  &:first-child {
-    margin-top: 0;
-    transform: none;
-  }
-
   &:after {
     content: '';
     position: absolute;
@@ -88,21 +142,6 @@ const Item = styled.li`
     transition: all 0.5s;
   }
 
-  &:hover {
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0);
-
-    > span {
-      > span {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    &:after {
-      background: rgba(0, 0, 0, 0.6);
-    }
-  }
-
   ${media.tablet`
     p {
       font-size: 4rem;
@@ -110,36 +149,27 @@ const Item = styled.li`
   `}
 
   ${media.mobile`
-    width: 100%;
-    margin: 0 0 100px;
-
     p {
       font-size: 3.5rem;
-    }
-
-    &:last-child {
-      margin: 0;
     }
 
     > span {
       width: 180px;
     }
-
-    &:nth-child(even) {
-      float: none;
-      > span {
-        right: -70px;
-      }
-    }
-    &:nth-child(odd) {
-      float: none;
-
-      > span {
-        top: 20px;
-        left: -30px;
-      }
-    }
   `}
+`;
+
+const SkillList = styled.ul`
+  margin: 35px 0 0;
+`;
+
+const Skill = styled.li`
+  display: inline-block;
+  margin: 0 10px 10px 0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: #afafaf;
+  color: #fff;
 `;
 
 type ProjectItemProps = {
@@ -148,6 +178,7 @@ type ProjectItemProps = {
   description: string;
   period: string;
   thumb: string;
+  skills: string[];
 };
 
 export default function ProjectItem({
@@ -156,14 +187,22 @@ export default function ProjectItem({
   description,
   period,
   thumb,
+  skills,
 }: ProjectItemProps) {
   return (
     <Item>
-      <span>
-        <span>View Detail</span>
-      </span>
-      <img src={thumb} alt="" />
-      <p>{title}</p>
+      <Visual>
+        <span>
+          <span>View Detail</span>
+        </span>
+        <img src={thumb} alt="" />
+        <p>{title}</p>
+      </Visual>
+      <SkillList>
+        {skills.map(skill => (
+          <Skill key={uuidv4()}>{skill}</Skill>
+        ))}
+      </SkillList>
     </Item>
   );
 }

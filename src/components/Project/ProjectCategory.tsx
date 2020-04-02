@@ -31,6 +31,7 @@ type dataType = {
   description: string;
   period: string;
   thumb: string;
+  skills: string[];
 };
 
 type PortFolioProps = {

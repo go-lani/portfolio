@@ -5,7 +5,7 @@ import media from '../../libs/MediaQuery';
 const Item = styled.li`
   float: left;
   width: calc(50% - 10px);
-  padding: 20px;
+  padding: 30px;
   margin: 0 0 20px 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 20px;

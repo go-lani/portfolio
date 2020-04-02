@@ -18,6 +18,8 @@ const SkillCategoryLayout = styled.div`
 `;
 
 const SkillList = styled.ul`
+  max-width: 1200px;
+  margin: 0 auto;
   &:after {
     display: block;
     content: '';
