@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, createRef, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import Intro from './components/Intro';
 import Main from './components/Main';
@@ -26,10 +26,10 @@ function App() {
   const [contentsHeight, setContentsHeight] = useState<number>();
   const [aboutHeight, setAboutHeight] = useState<number>(0);
   const [skillHeight, setSkillHeight] = useState<number>(0);
-  const introRef = useRef<HTMLElement>(null);
-  const contentRef = useRef<HTMLElement>(null);
-  const aboutRef = useRef<HTMLElement>(null);
-  const skillRef = useRef<HTMLElement>(null);
+  const introRef = createRef<HTMLElement>();
+  const contentRef = createRef<HTMLElement>();
+  const aboutRef = createRef<HTMLElement>();
+  const skillRef = createRef<HTMLElement>();
 
   useEffect(() => {
     // setTimeout(() => setLoading(false), 1700);

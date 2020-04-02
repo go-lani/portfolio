@@ -15,7 +15,8 @@ const Title = styled.h3`
   `}
 
   ${media.mobile`
-    font-size: 4rem;
+    margin: 0 0 30px;
+    font-size: 5rem;
   `}
 `;
 

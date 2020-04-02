@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 import CategorySubTitle from '../Common/CategorySubTitle';
 import SkillItem from './SkillItem';
+import media from '../../libs/MediaQuery';
 
 const SkillCategoryLayout = styled.div`
   margin: 0 0 50px;
@@ -10,6 +11,10 @@ const SkillCategoryLayout = styled.div`
   &:last-child {
     margin: 0;
   }
+
+  ${media.mobile`
+    margin: 0 0 80px;
+  `}
 `;
 
 const SkillList = styled.ul`

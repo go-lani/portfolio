@@ -6,11 +6,10 @@ import CategoryTitle from '../Common/CategoryTitle';
 import media from '../../libs/MediaQuery';
 
 const ProjectLayout = styled.section`
-  min-height: 100vh;
   padding: 100px 0;
 
   ${media.mobile`
-    padding: 30px 0;
+    padding: 50px 0;
   `}
 `;
 

@@ -1,16 +1,145 @@
 import React from 'react';
 import styled from 'styled-components';
+import media from '../../libs/MediaQuery';
 
 const Item = styled.li`
-  width: 300px;
+  position: relative;
+  width: 45%;
+  height: auto;
+  margin-top: -5%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  transition: all 0.5s;
+  cursor: pointer;
+  clear: both;
+
+  > span {
+    position: absolute;
+    text-align: center;
+    width: 200px;
+    background: rgba(195, 195, 195, 0.4);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    font-size: 1.6rem;
+    color: #fff;
+    padding: 20px 0;
+
+    > span {
+      display: inline-block;
+      padding: 0 30px 0 0;
+      background: url('./images/arr-right-white-24x24.png') right center
+        no-repeat;
+      background-size: 15px;
+      opacity: 0;
+      transform: translateY(40%);
+      transition: all 0.5s;
+    }
+  }
+
+  p {
+    position: absolute;
+    bottom: -20px;
+    left: 10px;
+    z-index: 1;
+    word-break: break-all;
+    font-weight: 700;
+    font-size: 5rem;
+    color: #ececec;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+
+  img {
+    width: 100%;
+  }
 
   &:nth-child(odd) {
-    align-self: flex-start;
+    float: left;
+    margin-left: 0;
+
+    > span {
+      top: 20px;
+      left: -60px;
+    }
   }
 
   &:nth-child(even) {
-    align-self: flex-end;
+    float: right;
+
+    > span {
+      top: 40px;
+      right: -80px;
+      transform: rotate(90deg);
+      transform-origin: center 0;
+    }
   }
+
+  &:first-child {
+    margin-top: 0;
+    transform: none;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+    transition: all 0.5s;
+  }
+
+  &:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0);
+
+    > span {
+      > span {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    &:after {
+      background: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  ${media.tablet`
+    p {
+      font-size: 4rem;
+    }
+  `}
+
+  ${media.mobile`
+    width: 100%;
+    margin: 0 0 100px;
+
+    p {
+      font-size: 3.5rem;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+
+    > span {
+      width: 180px;
+    }
+
+    &:nth-child(even) {
+      float: none;
+      > span {
+        right: -70px;
+      }
+    }
+    &:nth-child(odd) {
+      float: none;
+
+      > span {
+        top: 20px;
+        left: -30px;
+      }
+    }
+  `}
 `;
 
 type ProjectItemProps = {
@@ -18,6 +147,7 @@ type ProjectItemProps = {
   title: string;
   description: string;
   period: string;
+  thumb: string;
 };
 
 export default function ProjectItem({
@@ -25,6 +155,15 @@ export default function ProjectItem({
   title,
   description,
   period,
+  thumb,
 }: ProjectItemProps) {
-  return <Item>{title}</Item>;
+  return (
+    <Item>
+      <span>
+        <span>View Detail</span>
+      </span>
+      <img src={thumb} alt="" />
+      <p>{title}</p>
+    </Item>
+  );
 }
