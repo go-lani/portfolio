@@ -4,6 +4,7 @@ import ProjectCategory from './ProjectCategory';
 import projectDatas from '../../datas/project.json';
 import CategoryTitle from '../Common/CategoryTitle';
 import media from '../../libs/MediaQuery';
+import Popup from '../Popup';
 
 const ProjectLayout = styled.section`
   padding: 100px 0;
@@ -24,6 +25,7 @@ export default function Project() {
       <CategoryTitle title="Project" />
       <ProjectCategory category="Team" datas={teamProjectDatas} />
       <ProjectCategory category="Personal" datas={personalProjectDatas} />
+      <Popup />
     </ProjectLayout>
   );
 }
