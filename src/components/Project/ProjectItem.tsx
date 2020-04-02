@@ -175,22 +175,20 @@ const Skill = styled.li`
 type ProjectItemProps = {
   id: number;
   title: string;
-  description: string;
-  period: string;
   thumb: string;
   skills: string[];
+  onViewDetail: (id: number) => void;
 };
 
 export default function ProjectItem({
   id,
   title,
-  description,
-  period,
   thumb,
   skills,
+  onViewDetail,
 }: ProjectItemProps) {
   return (
-    <Item>
+    <Item onClick={() => onViewDetail(id)}>
       <Visual>
         <span>
           <span>View Detail</span>

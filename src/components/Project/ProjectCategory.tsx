@@ -37,18 +37,20 @@ type dataType = {
 type PortFolioProps = {
   datas: dataType[];
   category: string;
+  onViewDetail: (id: number) => void;
 };
 
 export default React.memo(function ProjectCategory({
   category,
   datas,
+  onViewDetail,
 }: PortFolioProps) {
   return (
     <ContentBox>
       <CategorySubTitle>{`${category} Project`}</CategorySubTitle>
       <ProjectList>
         {datas.map(data => (
-          <ProjectItem key={uuidv4()} {...data} />
+          <ProjectItem key={uuidv4()} onViewDetail={onViewDetail} {...data} />
         ))}
       </ProjectList>
     </ContentBox>
