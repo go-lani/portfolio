@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import media from '../../libs/MediaQuery';
 
 const Item = styled.li`
@@ -9,6 +9,7 @@ const Item = styled.li`
   margin: 0 0 20px 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
+  background: #e0e0e0;
 
   &:first-child {
     margin-left: 0;
@@ -26,13 +27,67 @@ const Item = styled.li`
   `}
 `;
 
-const LogoArea = styled.div`
-  width: 100%;
-  min-width: 100px;
-  height: 50px;
+const UtillArea = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 15px;
+`;
+
+const Logo = styled.div`
+  flex: 1 0 auto;
+  width: 120px;
+  height: 40px;
 
   img {
     height: 100%;
+  }
+
+  ${media.mobile`
+    width: 100px;
+    height: 30px;
+  `}
+`;
+
+const Level = styled.div<{ level: number }>`
+  position: relative;
+  max-width: 320px;
+  width: 100%;
+  padding: 0 50px 0 0;
+
+  &:after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    ${({ level }) => css`
+      content: '${level}%'
+    `}
+  }
+
+  ${media.mobile`
+    padding: 0 30px 0 0;
+  `}
+`;
+
+const Bar = styled.span<{ level: number; color: string }>`
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 6px;
+  background: #c7c7c7;
+  border-radius: 4px;
+
+  &:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: ${({ level }) => `${level}%`};
+    background: ${({ color }) => color};
   }
 `;
 
@@ -40,14 +95,13 @@ const DetailArea = styled.div``;
 
 const Title = styled.p`
   font-size: 2rem;
+  margin: 0 0 10px;
 `;
 
-const Level = styled.div``;
-
-const Bar = styled.span``;
-
 const Description = styled.p`
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  word-break: keep-all;
 `;
 
 type SkillItemProps = {
@@ -69,14 +123,16 @@ export default function SkillItem({
 }: SkillItemProps) {
   return (
     <Item>
-      <LogoArea>
-        <img src={logo} alt="" />
-      </LogoArea>
+      <UtillArea>
+        <Logo>
+          <img src={logo} alt="" />
+        </Logo>
+        <Level level={level}>
+          <Bar level={level} color={color} />
+        </Level>
+      </UtillArea>
       <DetailArea>
         <Title>{title}</Title>
-        <Level>
-          <Bar />
-        </Level>
         <Description>{description}</Description>
       </DetailArea>
     </Item>

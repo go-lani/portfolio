@@ -6,8 +6,7 @@ import skillsDatas from '../../datas/skills.json';
 import SkillCategory from './SkillCategory';
 
 const SkillLayout = styled.section`
-  min-height: 100vh;
-  padding: 100px 0;
+  padding: 100px 0 0;
 
   ${media.mobile`
     padding: 30px 0;

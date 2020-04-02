@@ -4,7 +4,7 @@
     "type": "skill",
     "title": "HTML",
     "level": 85,
-    "description": "HTML과 HTML5의 태그를 활용할 수 있고, Semantic Markup을 이해하고 있으며, HTML을 활용하여 서비스한 경험이 있습니다. 의미를 가진 마크업 개발을 지향합니다.",
+    "description": "HTML과 HTML5의 태그를 활용할 수 있고, Semantic Markup을 이해하고 있으며, HTML과 HTML5를 활용하여 서비스한 경험이 있습니다. 의미를 가진 마크업 개발을 지향합니다.",
     "logo": "./images/html-logo.png",
     "color": "#df4720"
   },
@@ -33,7 +33,7 @@
     "level": 75,
     "description": "Class Component와 Functional Component를 다룰 수 있으며, Hooks를 활용하여 프로젝트를 진행한 경험이 있습니다. 재사용성 및 가독성이 좋은 코드 개발을 지향하고 있습니다.",
     "logo": "./images/react-logo.png",
-    "color": "#f9d91f"
+    "color": "#61dafb"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "level": 60,
     "description": "Ducks 패턴을 활용하여 상태 관리를 할 수 있고, 비동기와 같은 사이드 이펙트를 Redux-Saga 미들웨어를 활용하여 관리할 수 있습니다.",
     "logo": "./images/redux-logo.png",
-    "color": "#61dafb"
+    "color": "#764abc"
   },
   {
     "id": 6,
@@ -51,14 +51,14 @@
     "level": 75,
     "description": "Props를 활용하여 상황에 맞는 스타일링을 구현할 수 있고, 재사용이 가능한 컴포넌트를 구현하는 것을 지향합니다.",
     "logo": "./images/sc-logo.png",
-    "color": "#61dafb"
+    "color": "#da79b4"
   },
   {
     "id": 7,
     "type": "skill",
     "title": "TypeScript",
     "level": 20,
-    "description": "동적 타입 언어인 자바스크립트를 컴파일링 과정을 통해 정적 타입으로 강제하여 정적 타입으로 사용할 수 있게 해주며 유지보수성과 개발자의 실수를 줄일 수 있다고 하여 관심이 생겼고 뿐만 아니라 IDE 환경에서 자동완성 및 타입 환경을 체크해주므로 개발이 편리해진다고 하여 학습하고 있고, 현재 포트폴리오 사이트 구축에 Typescript를 사용하였습니다.",
+    "description": "동적 타입 언어인 자바스크립트를 컴파일링 과정을 통해 정적 타입으로 강제하여 정적 타입으로 사용할 수 있게 해주며 유지보수성과 개발자의 실수를 줄일 수 있어 관심이 생겼고 뿐만 아니라 IDE 환경에서 자동완성 및 타입 환경을 체크하므로 개발에 유리하여 학습 및 현재 포트폴리오 사이트 구축에 Typescript를 사용하였습니다.",
     "logo": "./images/typescript-logo.png",
     "color": "#007acc"
   },

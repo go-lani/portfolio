@@ -4,7 +4,13 @@ import { v4 as uuidv4 } from 'uuid';
 import CategorySubTitle from '../Common/CategorySubTitle';
 import SkillItem from './SkillItem';
 
-const SkillCategoryLayout = styled.div``;
+const SkillCategoryLayout = styled.div`
+  margin: 0 0 50px;
+
+  &:last-child {
+    margin: 0;
+  }
+`;
 
 const SkillList = styled.ul`
   &:after {
@@ -29,7 +35,10 @@ type SkillCategoryProps = {
   category: string;
 };
 
-export default function SkillCategory({ category, datas }: SkillCategoryProps) {
+export default React.memo(function SkillCategory({
+  category,
+  datas,
+}: SkillCategoryProps) {
   return (
     <SkillCategoryLayout>
       <CategorySubTitle>{category}</CategorySubTitle>
@@ -40,4 +49,4 @@ export default function SkillCategory({ category, datas }: SkillCategoryProps) {
       </SkillList>
     </SkillCategoryLayout>
   );
-}
+});

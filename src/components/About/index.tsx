@@ -16,6 +16,7 @@ const InfoArea = styled.div`
   padding: 50px;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: #e0e0e0;
 
   ${media.mobile`
     align-items: center;
@@ -46,7 +47,7 @@ const InfoBox = styled.div`
 `;
 
 const Info = styled.div`
-  margin: 0 0 40px;
+  margin: 0 0 20px;
 
   .developer {
     font-weight: 700;
@@ -165,8 +166,8 @@ export default React.forwardRef<HTMLElement, AboutProps>(function About(
           </Info>
           <Intro>
             <p>
-              2017년부터 퍼블리셔로서 마크업과 UI 개발을 하였으며, 현재는
-              ReactJS, Typescript 등에 관심이 있어 주력 기술로서 사용하고
+              2017년부터 마크업과 UI 개발을 하였으며, 현재는 프론트엔드 개발
+              전반에 관심이 있어 React, Typescript 등 주력 기술로서 사용하고
               있으며, 친숙해지기 위해 노력하고 있습니다.
               <br />
               프론트엔드 개발자로서 사용자와 가장 가까운 위치에서 소통하며 좋은
