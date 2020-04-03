@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import ProjectCategory from './ProjectCategory';
 import projectDatas from '../../datas/project.json';
 import CategoryTitle from '../Common/CategoryTitle';
+import ProjectPopup from './ProjectPopup';
 import media from '../../libs/MediaQuery';
-import Popup from '../Popup';
 
 const ProjectLayout = styled.section`
   padding: 100px 0;
@@ -29,7 +29,7 @@ type ProjectData = {
   skills: string[];
 };
 
-export default function Project() {
+export default React.memo(function Project() {
   const [selectProject, setSelectProject] = useState<ProjectData | null>(null);
   const [detailVisible, setDetailVisible] = useState<boolean>(false);
 
@@ -38,14 +38,6 @@ export default function Project() {
     if (selectData) setSelectProject(selectData);
     setDetailVisible(true);
   };
-
-  useEffect(() => {
-    console.log('먼저? selectProject', selectProject);
-  }, [selectProject]);
-
-  useEffect(() => {
-    console.log('먼저? detailVisible', detailVisible);
-  }, [detailVisible]);
 
   const onHidePopup = () => {
     setDetailVisible(false);
@@ -65,8 +57,8 @@ export default function Project() {
         onViewDetail={onViewDetail}
         datas={personalProjectDatas}
       />
-      {detailVisible && (
-        <Popup
+      {detailVisible && selectProject && (
+        <ProjectPopup
           visible={detailVisible}
           selectProject={selectProject}
           onHidePopup={onHidePopup}
@@ -74,4 +66,4 @@ export default function Project() {
       )}
     </ProjectLayout>
   );
-}
+});

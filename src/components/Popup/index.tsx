@@ -1,7 +1,28 @@
-import React, { useEffect } from 'react';
-import styled from 'styled-components';
+import React, { useEffect, useState } from 'react';
+import styled, { keyframes, css } from 'styled-components';
 import ModalPortal from './ModalPotal';
 import media from '../../libs/MediaQuery';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const slideUp = keyframes`
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
 
 const PopupLayout = styled.div`
   display: flex;
@@ -30,11 +51,11 @@ const Dim = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.8);
-
-  ${media.mobile`
-    display: none;
-  `}
+  background: rgba(0, 0, 0, 0.4);
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+  animation-name: ${fadeIn};
+  animation-fill-mode: forward;
 `;
 
 const PopupInner = styled.div`
@@ -45,6 +66,10 @@ const PopupInner = styled.div`
   height: 100%;
   padding: 30px;
   background: #fff;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+  animation-name: ${slideUp};
+  animation-fill-mode: forwards;
 
   ${media.mobile`
     height: 100%;
@@ -98,26 +123,13 @@ const Content = styled.div`
   max-height: calc(100% - 60px);
 `;
 
-type dataType = {
-  id: number;
-  title: string;
-  description: string;
-  period: string;
-  thumb: string;
-  skills: string[];
-};
-
 type PopupProps = {
   visible: boolean;
+  children: JSX.Element[] | JSX.Element | string;
   onHidePopup: () => void;
-  selectProject: dataType | null;
 };
 
-export default function Popup({
-  visible,
-  selectProject,
-  onHidePopup,
-}: PopupProps) {
+export default function Popup({ visible, children, onHidePopup }: PopupProps) {
   useEffect(() => {
     const $body = document.querySelector('body');
     if ($body) $body.style.overflow = 'hidden';
@@ -126,8 +138,6 @@ export default function Popup({
       if ($body) $body.style.overflow = 'auto';
     };
   }, []);
-
-  console.log(selectProject);
 
   return (
     <ModalPortal>
@@ -138,201 +148,7 @@ export default function Popup({
             <Title>프로젝트 상세보기</Title>
             <CloseButton onClick={onHidePopup}>닫기</CloseButton>
           </Header>
-          <Content>
-            {selectProject && selectProject.id}
-            {selectProject && selectProject.title}
-            {selectProject && selectProject.description}
-            {selectProject && selectProject.period}
-            {selectProject && selectProject.skills}
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-            줄바꿈
-            <br />
-          </Content>
+          <Content>{children}</Content>
         </PopupInner>
       </PopupLayout>
     </ModalPortal>
