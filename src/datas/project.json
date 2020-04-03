@@ -3,73 +3,365 @@
     "id": 1,
     "type": "team",
     "title": "Festa",
-    "description": "Festa!",
+    "subject": "Festa 데이터를 활용하여 Festa Clone",
     "period": "2020.03.09 ~ 2020.03.13",
     "thumb": "./images/festa-thumb.jpg",
-    "skills": ["HTML", "CSS", "Javascript", "React", "Styled-Components"]
+    "skills": ["HTML", "CSS", "Javascript", "React", "Styled-Components"],
+    "mock": "./images/festa-mock.png",
+    "people": "이철환(프론트엔드 개발), 박홍빈(백엔드 개발), 이도현(백엔드 개발), 오형근(백엔드 개발)",
+    "video": "https://www.youtube.com/embed/c5cS4_h57QE",
+    "site": "http://festa.s3-website.ap-northeast-2.amazonaws.com/",
+    "github": "https://github.com/publizm/festa",
+    "reviews": ["개발 도중 API 요청을 변경해야 되는 상황이 빈번히 발생되어 개발 전 백엔드 개발자와 소통하여 가이드라인을 잡아야 된다는 것을 느낌", "데이터의 복잡성이 떨어지고 서버측에서 미리 데이터를 가공하여 넘겨줘서 Redux/Redux-saga 대신 Context API로 전역 상태를 관리했는데 Redux를 사용했을때보다 디렉토리의 복잡도는 확실히 떨어지나, 파일 내부의 코드의 복잡성이 올라가는 점을 느낌"],
+    "role": [
+      {
+        "img": null,
+        "text": "전체 UI 구현"
+      },
+      {
+        "img": null,
+        "text": "(로그인 페이지)최초 입력 시 계정이 존재하는지 체크 후 로그인/회원가입 분기 처리"
+      },
+      {
+        "img": null,
+        "text": "(로그인 페이지)회원가입 입력 후 > 로그인 UI 전환"
+      },
+      {
+        "img": null,
+        "text": "(로그인 페이지)로그인 완료 시 해당 토큰을 로컬 스토리지 저장 / 로그인 회원정보는 ContextAPI을 활용"
+      },
+      {
+        "img": null,
+        "text": "(메인 페이지)무료/유료/외부 이벤트 카테고리 분류하여 노출"
+      },
+      {
+        "img": null,
+        "text": "(메인 페이지)이벤트 클릭 시 이벤트 상세 정보 노출"
+      },
+      {
+        "img": null,
+        "text": "(메인 페이지)자세히 보기 클릭 시 해당 카테고리 리스트 페이지 라우팅"
+      },
+      {
+        "img": null,
+        "text": "(리스트 페이지) Query String에 따른 리스트 노출"
+      },
+      {
+        "img": null,
+        "text": "(리스트 페이지) pagination 처리"
+      },
+      {
+        "img": null,
+        "text": "(상세 페이지) 해당 콘텐츠의 id 값에 대한 상세 데이터 노출"
+      },
+      {
+        "img": null,
+        "text": "(키워드 설정)  로그인이 되어있는지 체크 후 노출, 미 로그인 시 경고창 노출"
+      },
+      {
+        "img": null,
+        "text": "(상세 페이지) 최초 해당 유저가 등록한 키워드를 노출"
+      },
+      {
+        "img": null,
+        "text": "(상세 페이지) 키워드 등록 / 삭제"
+      }
+    ]
   },
   {
     "id": 2,
     "type": "team",
     "title": "FastScanner",
-    "description": "실시간 항공권 예약 서비스",
+    "subject": "rapidApi에서 제공하는 SkyScannerApi를 활용한 실시간 항공권 예약 서비스 클론",
     "period": "2020.02.05 ~ 2020.02.28",
     "thumb": "./images/fastscanner-thumb.jpg",
-    "skills": ["HTML", "CSS", "Javascript", "React", "Redux/Redux-Saga", "Styled-Components"]
+    "skills": ["HTML", "CSS", "Javascript", "React", "Redux/Redux-Saga", "Styled-Components"],
+    "people": "이철환(프론트엔드 개발, 팀장), 김관식(프론트엔드 개발), 정다희(프론트엔드 개발)",
+    "mock": "./images/fastscanner-mock.png",
+    "video": "https://www.youtube.com/embed/7XFmkyHm1xU",
+    "site": "http://fastscanner.s3-website.ap-northeast-2.amazonaws.com/",
+    "github": "https://github.com/publizm/fastscanner",
+    "reviews": ["팀원과 함께 일정에 대해 고민을 많이 하고, 대화를 통해 유동적으로 업무 분담을 하며 진행하였는데, 일정 안에 기획했던 기능뿐만 아니라 + α를 구현하게 되어 팀원과의 커뮤니케이션이 중요하다는 것을 느낌", "데이터 가공 및 데이터에 따른 UI 바인딩 방법을 숙달하게 되었음"],
+    "role": [
+      {
+        "img": null,
+        "text": "팀장으로서 전반적인 역할 분담과 일정 조율 및 컨벤션 조정"
+      },
+      {
+        "img": null,
+        "text": "메인 페이지 / 검색 결과 페이지 레이아웃 담당 및 전반적인 스타일링 조율"
+      },
+      {
+        "img": null,
+        "text": "(검색 페이지) 출발/도착지 검색 시 API 호출하여 출발지/도착지에 대한 데이터를 실시간으로 UI 노출"
+      },
+      {
+        "img": null,
+        "text": "(검색 페이지) 검색 결과에 대한 Response 데이터를 가공하여 상태 저장"
+      },
+      {
+        "img": null,
+        "text": "(메인 페이지) URL 파라미터와 쿼리를 통한 Session 발급 및 해당 Session키로 데이터 재가공"
+      },
+      {
+        "img": null,
+        "text": "(메인 페이지) 가는 날/오는 날 출발시간 기준 필터링하여 UI 노출"
+      },
+      {
+        "img": null,
+        "text": "(메인 페이지) Infinity scroll을 통한 데이터 노출"
+      },
+      {
+        "img": null,
+        "text": "(메인 페이지) Pendding 상태일 경우(데이터가 완전히 불러오지 않은 상황)에 완료된 데이터만 데이터를 가공하여 미리 노출, 이 경우 최소가로 Sorting 하여 UI에 노출"
+      }
+    ]
   },
   {
     "id": 3,
     "type": "team",
     "title": "Netflix",
-    "description": "영화/TV 프로그램의 콘텐츠에 대한 정보 제공 서비스",
-    "period": "2020.01.22(8시간) / 2020.03.05 ~ 진행중(리팩토링)",
+    "subject": "영화/TV 프로그램의 콘텐츠에 대한 정보 제공 서비스",
+    "period": "2020.01.22(8시간) / 2020.03.05 ~ 2020.03.06",
     "thumb": "./images/complix-thumb.jpg",
-    "skills": ["HTML", "CSS", "Javascript", "React", "Redux/Redux-Saga", "Styled-Components"]
+    "skills": ["HTML", "CSS", "Javascript", "React", "Redux/Redux-Saga", "Styled-Components"],
+    "people": "이철환(프론트엔드 개발, 팀원), 김진현(프론트엔드 개발)",
+    "mock": "./images/complix-mock.png",
+    "video": null,
+    "site": "http://comflix.s3-website.ap-northeast-2.amazonaws.com/signin",
+    "github": "https://github.com/publizm/Complix",
+    "reviews": ["최초 필수 기능 설정 시 시간 대비 많은 기능을 구현하려다 보니 시간에 쫓겨 코드 재사용성 및 효율성을 생각하지 못한 채로 구현하게 되었고, 결국 계획했던 기능들을 모두 소화하지 못하여 일정관리와 업무분담의 중요성을 느낌", "중복된 코드를 컴포넌트화하면 코드의 가독성과 재사용성을 높일 수 있다는 것을 느낌"],
+    "role": [
+      {
+        "img": null,
+        "text": "로그인 페이지 스타일 및 레이아웃 작업"
+      },
+      {
+        "img": null,
+        "text": "로그인/로그아웃에 대한 라우팅처리"
+      },
+      {
+        "img": null,
+        "text": "메인 페이지 스타일 및 레이아웃 작업"
+      },
+      {
+        "img": null,
+        "text": "(메인 페이지) 비주얼 영역 매 렌더시 새로운 영화 데이터 중 랜덤하게 구현"
+      },
+      {
+        "img": null,
+        "text": "(메인 페이지) 새로운 영화 및 TV 프로그램 데이터 바인딩"
+      },
+      {
+        "img": null,
+        "text": "(메인 페이지) 슬라이드내 컨텐츠 클릭시 상세정보에 대한 데이터 바인딩 및 UI 구현"
+      },
+      {
+        "img": null,
+        "text": "(리펙토링) 기능적인 코드와 View에 대한 코드의 파일을 구분하여 코드 가독성 및 유지보수성을 개선"
+      },
+      {
+        "img": null,
+        "text": "(리펙토링) 중복된 코드를 최소화하여 코드 생산성 개선"
+      },
+      {
+        "img": null,
+        "text": "(리펙토링) 반응형 UI 구현"
+      },
+      {
+        "img": null,
+        "text": "(리펙토링) 라우팅 기능 추가(검색 결과)"
+      },
+      {
+        "img": null,
+        "text": "(리펙토링) 검색 결과 페이지 스타일 변경 및 리스트에 대한 상세 팝업 기능 추가"
+      }
+    ]
   },
   {
     "id": 4,
     "type": "team",
     "title": "Trello",
-    "description": "Trello Clone",
+    "subject": "Trello Clone",
     "period": "2019.11.12 ~ 2019.11.22",
     "thumb": "./images/onello-thumb.jpg",
-    "skills": ["HTML", "CSS", "Javascript"]
+    "skills": ["HTML", "CSS", "Javascript"],
+    "people": "이철환(팀장), 김재헌, 정수지",
+    "mock": "./images/onello-mock.png",
+    "video": "https://www.youtube.com/embed/EWeQ-qw9mvU",
+    "site": null,
+    "github": "https://github.com/publizm/onello",
+    "reviews": ["Git을 이용한 협업", "서버의 응답 값을 활용하여 UI에 바인딩하는 방법", "Ajax을 활용한 비동기 통신"],
+    "role": [
+      {
+        "img": null,
+        "text": "팀장으로서 일정 관리 및 역할 분담"
+      },
+      {
+        "img": null,
+        "text": "전반적인 UI 설계 및 스타일링"
+      },
+      {
+        "img": null,
+        "text": "대주제 추가 및 수정 기능"
+      },
+      {
+        "img": null,
+        "text": "소주제 제목 추가"
+      },
+      {
+        "img": null,
+        "text": "대주제 클릭 시 상세 팝업 내 데이터 바인딩"
+      },
+      {
+        "img": null,
+        "text": "상세 팝업 내 Label 데이터 바인딩"
+      },
+      {
+        "img": null,
+        "text": "상세 팝업 내 Checklist 체크상태에 따른 progress 구현"
+      }
+    ]
   },
   {
     "id": 5,
     "type": "personal",
     "title": "PortFolio",
-    "description": "포트폴리오 사이트",
+    "subject": "포트폴리오 사이트",
     "period": "2020.03.24 ~ ",
     "thumb": "./images/portfolio-thumb.jpg",
-    "skills": ["HTML", "CSS", "Javascript", "React", "Typescript", "Styled-Components"]
+    "skills": ["HTML", "CSS", "Javascript", "React", "Typescript", "Styled-Components"],
+    "mock": "./images/portfolio-mock.png",
+    "video": "https://www.youtube.com/embed/EWeQ-qw9mvU",
+    "site": null,
+    "github": "https://github.com/publizm/onello",
+    "reviews": ["Typescript 사용시 IDE에서 자동완성을 해주어 편리함을 느낌", "규모가 작은 프로젝트이므로 타입의 강제성에 대한 장점을 많이 느끼진 못했지만 여러명의 개발자가 하나의 서비스를 제공할때 사용시 매우 유용할 것 같다고 생각됨", "Type 설정시 어떤 타입인지 알아야되서 어려움이 있었음"],
+    "role": [
+      {
+        "img": null,
+        "text": "반응형 UI 구현"
+      },
+      {
+        "img": null,
+        "text": "최초 접근시 노출 후 일정시간 지나고 사라지는 Loader UI 구현"
+      },
+      {
+        "img": null,
+        "text": "메인 비주얼 화면과 컨텐츠를 중첩하여 마치 스크롤시 덮개를 펼치는 느낌의 UI 구현"
+      },
+      {
+        "img": null,
+        "text": "메뉴 클릭시 해당 컨텐츠로의 스크롤 구현"
+      },
+      {
+        "img": null,
+        "text": "Skill과 Project를 json 데이터화하여 하드코딩 없이 UI 데이터 바인딩"
+      }
+    ]
   },
   {
     "id": 6,
     "type": "personal",
     "title": "Books Reivew",
-    "description": "개발서적에 대한 리뷰와 읽을 책을 기록하는 웹 애플리케이션",
+    "subject": "개발서적에 대한 리뷰와 읽을 책을 기록하는 웹 애플리케이션",
     "period": "2020.01.17 ~ 2020.02.11",
     "thumb": "./images/books-thumb.jpg",
-    "skills": ["HTML", "CSS", "Javascript", "React", "Redux/Redux-Saga", "Styled-Components"]
+    "skills": ["HTML", "CSS", "Javascript", "React", "Redux/Redux-Saga", "Styled-Components"],
+    "mock": "./images/books-mock.png",
+    "video": "https://www.youtube.com/embed/EWeQ-qw9mvU",
+    "site": null,
+    "github": "https://github.com/publizm/onello",
+    "reviews": ["Token을 이용한 로그인/로그아웃 처리하는 방법", "connect 함수를 이용하여 컴포넌트와 로직을 분리하는 방법", "Ducks 패턴의 장점을 느낌"],
+    "role": [
+      {
+        "img": null,
+        "text": "반응형 UI 구현"
+      },
+      {
+        "img": null,
+        "text": "localStorage에 token 값을 저장하여 로그인 / 로그아웃 관리"
+      },
+      {
+        "img": null,
+        "text": "Redux를 통해 모든 상태를 전역적으로 관리(Ducks 패턴 활용)"
+      },
+      {
+        "img": null,
+        "text": "비동기는 Redux-Saga를 활용하여 관리"
+      },
+      {
+        "img": null,
+        "text": "컴포넌트와 Store 사이에 컨테이너를 두어 데이터 가공 및 처리를 위한 로직을 컨테이너에서 관리"
+      }
+    ]
   },
   {
     "id": 7,
     "type": "personal",
     "title": "Youtube",
-    "description": "YoutubeAPI를 활용한 Youtube clone",
+    "subject": "YoutubeAPI를 활용한 Youtube clone",
     "period": "2019.12.02 ~ 2019.12.22",
     "thumb": "./images/youtube-thumb.jpg",
-    "skills": ["HTML", "CSS", "Javascript", "React", "Redux"]
+    "skills": ["HTML", "CSS", "Javascript", "React", "Redux"],
+    "mock": "./images/youtube-mock.png",
+    "video": null,
+    "site": null,
+    "github": "https://github.com/publizm/onello",
+    "reviews": ["첫 React 프로젝트로 React의 전반적인 흐름을 느낌", "컴포넌트의 분리와 활용법을 느낌", "상황에 맞는 적절한 라이브러리를 찾고 활용하는 방법을 느낌", "SPA에서의 Redux는 상태이므로 새로고침시 모든 상태가 초기화되어 서버의 필요성을 느낌"],
+    "role": [
+      {
+        "img": null,
+        "text": "React Class Component 방식으로 개발"
+      },
+      {
+        "img": null,
+        "text": "axios를 활용하여 Youtube Data 바인딩"
+      },
+      {
+        "img": null,
+        "text": "debounce 라이브러리를 활용하여 검색 자동 완성 기능"
+      },
+      {
+        "img": null,
+        "text": "동영상 리스트 Infinite Scroll 기능"
+      },
+      {
+        "img": null,
+        "text": "라우팅을 활용한 상세페이지 구현"
+      },
+      {
+        "img": null,
+        "text": "Redux를 활용한 상세 페이지 좋아요 / 싫어요 / 댓글 추가 기능 구현"
+      }
+    ]
   },
   {
     "id": 8,
     "type": "personal",
     "title": "TodoList",
-    "description": "할 일 관리 앱",
-    "period": "2019.10.31 ~ 2019.11.06 / 2020.01.06 ~ 2020.01.08",
+    "subject": "할 일 관리 앱",
+    "period": "(JS.ver) 2019.10.31 ~ 2019.11.06 / (RCC.ver, RFC.ver)2020.01.06 ~ 2020.01.08",
     "thumb": "./images/todolist-thumb.jpg",
-    "skills": ["HTML", "CSS", "Javascript", "React"]
+    "skills": ["HTML", "CSS", "Javascript", "React"],
+    "mock": "./images/todo-mock.png",
+    "video": null,
+    "site": null,
+    "github": "https://github.com/publizm/todolist_react_hook",
+    "reviews": ["Vanilla Javascript를 사용했을때와 React 라이브러리를 활용했을때의 차이점", "React 활용시 코드 가독성 및 최적화에 효율성을 느낌", "Class Component를 활용한 방법과 Functional Component를 활용한 방법"],
+    "role": [
+      {
+        "img": null,
+        "text": "할 일 추가 및 삭제 기능"
+      },
+      {
+        "img": null,
+        "text": "상태별(ALL, Active, Done) UI 렌더링 구현"
+      },
+      {
+        "img": null,
+        "text": "모든 할 일 완료, 완료한 목록 모두 지우기 기능"
+      }
+    ]
   }
 
 ]

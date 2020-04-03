@@ -3,14 +3,34 @@ import styled from 'styled-components';
 import media from '../../libs/MediaQuery';
 import Popup from '../Popup';
 
-interface dataType {
+const MockImg = styled.div`
+  img {
+    width: 100%;
+  }
+`;
+
+const Title = styled.p``;
+
+type RoleType = {
+  img: string | null;
+  text: string;
+};
+
+type dataType = {
   id: number;
+  type: string;
   title: string;
-  description: string;
+  subject: string;
   period: string;
   thumb: string;
   skills: string[];
-}
+  mock: string;
+  video: string | null;
+  site: string | null;
+  github: string | null;
+  reviews: string[];
+  role: RoleType[];
+};
 
 type PopupProps = {
   visible: boolean;
@@ -23,12 +43,15 @@ export default function ProjectPopup({
   selectProject,
   onHidePopup,
 }: PopupProps) {
-  const { title, description, period, skills } = selectProject;
+  const { title, subject, period, skills, mock, role } = selectProject;
 
-  console.log(title, description, period, skills);
+  console.log(title, subject, period, skills, role);
   return (
     <Popup visible={visible} onHidePopup={onHidePopup}>
-      컨텐츠
+      <MockImg>
+        <img src={mock} alt="" />
+      </MockImg>
+      <Title>{title}</Title>
     </Popup>
   );
 }

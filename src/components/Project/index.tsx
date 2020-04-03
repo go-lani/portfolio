@@ -19,14 +19,25 @@ const personalProjectDatas = projectDatas.filter(
   data => data.type === 'personal',
 );
 
+type RoleType = {
+  img: string | null;
+  text: string;
+};
+
 type ProjectData = {
   id: number;
   type: string;
   title: string;
-  description: string;
+  subject: string;
   period: string;
   thumb: string;
   skills: string[];
+  mock: string;
+  video: string | null;
+  site: string | null;
+  github: string | null;
+  reviews: string[];
+  role: RoleType[];
 };
 
 export default React.memo(function Project() {

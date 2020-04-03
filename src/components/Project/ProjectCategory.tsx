@@ -25,13 +25,25 @@ const ProjectList = styled.ul`
   }
 `;
 
+type RoleType = {
+  img: string | null;
+  text: string;
+};
+
 type dataType = {
   id: number;
+  type: string;
   title: string;
-  description: string;
+  subject: string;
   period: string;
   thumb: string;
   skills: string[];
+  mock: string;
+  video: string | null;
+  site: string | null;
+  github: string | null;
+  reviews: string[];
+  role: RoleType[];
 };
 
 type PortFolioProps = {

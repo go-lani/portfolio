@@ -7,7 +7,7 @@ const MainLayout = styled.section`
   position: fixed;
   top: 0;
   z-index: 1;
-  width: 100%;
+  width: 100vw;
   padding: 0 80px;
 
   ${media.tablet`

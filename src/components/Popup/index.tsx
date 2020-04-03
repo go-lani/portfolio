@@ -65,7 +65,7 @@ const PopupInner = styled.div`
   width: 100%;
   height: 100%;
   padding: 30px;
-  background: #fff;
+  background: #1f1f27;
   animation-duration: 0.3s;
   animation-timing-function: ease-out;
   animation-name: ${slideUp};
@@ -79,18 +79,20 @@ const PopupInner = styled.div`
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 0 0 20px;
 `;
 
 const Title = styled.p`
   font-weight: 700;
   font-size: 3rem;
+  color: #fff;
 `;
 
 const CloseButton = styled.button`
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   text-indent: -9999em;
 
   &:before {
@@ -100,7 +102,7 @@ const CloseButton = styled.button`
     content: '';
     width: 100%;
     height: 3px;
-    background: #000;
+    background: #fff;
     transform: translate(-50%, -50%) rotate(45deg);
   }
 
@@ -111,9 +113,14 @@ const CloseButton = styled.button`
     content: '';
     width: 100%;
     height: 3px;
-    background: #000;
+    background: #fff;
     transform: translate(-50%, -50%) rotate(-45deg);
   }
+
+  ${media.mobile`
+    width: 20px;
+    height: 20px;
+  `}
 `;
 
 const Content = styled.div`
@@ -121,6 +128,7 @@ const Content = styled.div`
   overflow-y: auto;
   height: 100%;
   max-height: calc(100% - 60px);
+  color: #fff;
 `;
 
 type PopupProps = {
