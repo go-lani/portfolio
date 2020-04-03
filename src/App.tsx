@@ -17,7 +17,7 @@ const Container = styled.div<{ contentsHeight: number | undefined }>`
 `;
 
 function App() {
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
   const [menuActive, setMenuActive] = useState<boolean>(false);
   const [isIntro, setIsintro] = useState<boolean>(true);
   const [mainScroll, setMainScroll] = useState<number>(0);
@@ -32,7 +32,7 @@ function App() {
   const skillRef = createRef<HTMLElement>();
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 1700);
+    // setTimeout(() => setLoading(false), 1700);
   }, []);
 
   useEffect(() => {

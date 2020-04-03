@@ -53,12 +53,13 @@ const MenuItem = styled.li`
     color: #fff;
     letter-spacing: 0.1em;
     transition: all 0.3s;
-    text-shadow: 6px 6px 18px rgba(255, 255, 255, 0.35);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
   }
 
   &:hover {
     button {
       color: #0e2ba4;
+      text-shadow: none;
     }
   }
 `;

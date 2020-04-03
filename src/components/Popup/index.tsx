@@ -70,10 +70,6 @@ const PopupInner = styled.div`
   animation-timing-function: ease-out;
   animation-name: ${slideUp};
   animation-fill-mode: forwards;
-
-  ${media.mobile`
-    height: 100%;
-  `}
 `;
 
 const Header = styled.div`
@@ -132,12 +128,11 @@ const Content = styled.div`
 `;
 
 type PopupProps = {
-  visible: boolean;
   children: JSX.Element[] | JSX.Element | string;
   onHidePopup: () => void;
 };
 
-export default function Popup({ visible, children, onHidePopup }: PopupProps) {
+export default function Popup({ children, onHidePopup }: PopupProps) {
   useEffect(() => {
     const $body = document.querySelector('body');
     if ($body) $body.style.overflow = 'hidden';

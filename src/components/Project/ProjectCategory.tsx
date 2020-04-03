@@ -43,6 +43,7 @@ type dataType = {
   site: string | null;
   github: string | null;
   reviews: string[];
+  notice?: string;
   role: RoleType[];
 };
 

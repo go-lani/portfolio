@@ -72,7 +72,7 @@
     "id": 2,
     "type": "team",
     "title": "FastScanner",
-    "subject": "rapidApi에서 제공하는 SkyScannerApi를 활용한 실시간 항공권 예약 서비스 클론",
+    "subject": "SkyScannerApi를 활용한 실시간 항공권 예약 서비스",
     "period": "2020.02.05 ~ 2020.02.28",
     "thumb": "./images/fastscanner-thumb.jpg",
     "skills": ["HTML", "CSS", "Javascript", "React", "Redux/Redux-Saga", "Styled-Components"],
@@ -81,6 +81,7 @@
     "video": "https://www.youtube.com/embed/7XFmkyHm1xU",
     "site": "http://fastscanner.s3-website.ap-northeast-2.amazonaws.com/",
     "github": "https://github.com/publizm/fastscanner",
+    "notice": "현재 rapidAPI에서 FilghtLiveSearch를 삭제하였습니다. 구현 동영상을 보시는 것을 추천드립니다.",
     "reviews": ["팀원과 함께 일정에 대해 고민을 많이 하고, 대화를 통해 유동적으로 업무 분담을 하며 진행하였는데, 일정 안에 기획했던 기능뿐만 아니라 + α를 구현하게 되어 팀원과의 커뮤니케이션이 중요하다는 것을 느낌", "데이터 가공 및 데이터에 따른 UI 바인딩 방법을 숙달하게 되었음"],
     "role": [
       {
@@ -232,7 +233,7 @@
     "thumb": "./images/portfolio-thumb.jpg",
     "skills": ["HTML", "CSS", "Javascript", "React", "Typescript", "Styled-Components"],
     "mock": "./images/portfolio-mock.png",
-    "video": "https://www.youtube.com/embed/EWeQ-qw9mvU",
+    "video": null,
     "site": null,
     "github": "https://github.com/publizm/onello",
     "reviews": ["Typescript 사용시 IDE에서 자동완성을 해주어 편리함을 느낌", "규모가 작은 프로젝트이므로 타입의 강제성에 대한 장점을 많이 느끼진 못했지만 여러명의 개발자가 하나의 서비스를 제공할때 사용시 매우 유용할 것 같다고 생각됨", "Type 설정시 어떤 타입인지 알아야되서 어려움이 있었음"],
@@ -268,9 +269,9 @@
     "thumb": "./images/books-thumb.jpg",
     "skills": ["HTML", "CSS", "Javascript", "React", "Redux/Redux-Saga", "Styled-Components"],
     "mock": "./images/books-mock.png",
-    "video": "https://www.youtube.com/embed/EWeQ-qw9mvU",
-    "site": null,
-    "github": "https://github.com/publizm/onello",
+    "video": null,
+    "site": "http://mybookslist.s3-website.ap-northeast-2.amazonaws.com/signin",
+    "github": "https://github.com/publizm/books-review",
     "reviews": ["Token을 이용한 로그인/로그아웃 처리하는 방법", "connect 함수를 이용하여 컴포넌트와 로직을 분리하는 방법", "Ducks 패턴의 장점을 느낌"],
     "role": [
       {
@@ -299,7 +300,7 @@
     "id": 7,
     "type": "personal",
     "title": "Youtube",
-    "subject": "YoutubeAPI를 활용한 Youtube clone",
+    "subject": "YoutubeAPI를 활용한 Youtube mini clone",
     "period": "2019.12.02 ~ 2019.12.22",
     "thumb": "./images/youtube-thumb.jpg",
     "skills": ["HTML", "CSS", "Javascript", "React", "Redux"],

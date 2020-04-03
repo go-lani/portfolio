@@ -37,6 +37,7 @@ type ProjectData = {
   site: string | null;
   github: string | null;
   reviews: string[];
+  notice?: string;
   role: RoleType[];
 };
 
@@ -69,11 +70,7 @@ export default React.memo(function Project() {
         datas={personalProjectDatas}
       />
       {detailVisible && selectProject && (
-        <ProjectPopup
-          visible={detailVisible}
-          selectProject={selectProject}
-          onHidePopup={onHidePopup}
-        />
+        <ProjectPopup selectProject={selectProject} onHidePopup={onHidePopup} />
       )}
     </ProjectLayout>
   );
