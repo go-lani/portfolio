@@ -166,7 +166,7 @@ const SkillItem = styled.li`
   display: inline-block;
   margin: 0 10px 10px 0;
   padding: 5px 10px;
-  background: #c73456;
+  background: #e63f65;
   border-radius: 2px;
 
   &.alpha {
@@ -176,6 +176,24 @@ const SkillItem = styled.li`
     line-height: 34px;
   }
 `;
+
+const RoleList = styled.ul``;
+
+const RoleItem = styled.li`
+  margin: 0 0 10px;
+
+  &:last-child {
+    margin: 0;
+  }
+`;
+const RoleItemImgBox = styled.div`
+  margin: 0 0 5px;
+
+  img {
+    max-width: 100%;
+  }
+`;
+const RoleItemText = styled.p``;
 
 export default function ProjectPopup({
   selectProject,
@@ -286,7 +304,20 @@ export default function ProjectPopup({
               맡은 역할 및<br />
               구현항목
             </DetailTitle>
-            <DetailContent></DetailContent>
+            <DetailContent>
+              <RoleList>
+                {role.map(r => (
+                  <RoleItem key={uuidv4()}>
+                    {r.img && (
+                      <RoleItemImgBox>
+                        <img src={r.img} alt="" />
+                      </RoleItemImgBox>
+                    )}
+                    <RoleItemText>{r.text}</RoleItemText>
+                  </RoleItem>
+                ))}
+              </RoleList>
+            </DetailContent>
           </Detail>
           <Detail>
             <DetailTitle>
