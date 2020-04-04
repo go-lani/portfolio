@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import media from '../../libs/MediaQuery';
 import Popup from '../Popup';
@@ -39,7 +39,7 @@ const MockImg = styled.div`
 `;
 
 const ViewArea = styled.div`
-  margin: 0 0 20px;
+  margin: 0 0 30px;
 `;
 
 const Viewer = styled.div`
@@ -90,10 +90,15 @@ const Notice = styled.p`
   color: #ff2d54;
 `;
 
-const Detail = styled.div``;
+const Summary = styled.div`
+  margin: 0 0 30px;
+  padding: 0 0 30px;
+  border-bottom: 2px dotted #424242;
+`;
 
 const Title = styled.p`
-  margin: 0 0 5px;
+  margin: 0 0 10px;
+
   em {
     display: inline-block;
     position: relative;
@@ -113,13 +118,40 @@ const Title = styled.p`
 `;
 
 const SubjectText = styled.p`
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 1.5;
   word-break: keep-all;
-
+/*
   ${media.mobile`
     font-size: 1.4rem;
-  `}
+  `} */
+`;
+
+const DetailList = styled.ul``;
+
+const Detail = styled.li`
+  display: flex;
+
+  & + & {
+    margin: 30px 0 0;
+  }
+`;
+
+const DetailTitle = styled.p`
+  width: 200px;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 1.5;
+`;
+
+const DetailContent = styled.div`
+  width: 100%;
+  font-size: 1.6rem;
+  line-height: 1.5;
+`;
+
+const DetailText = styled.p`
+  word-break: keep-all;
 `;
 
 export default function ProjectPopup({
@@ -139,6 +171,20 @@ export default function ProjectPopup({
     role,
     notice,
   } = selectProject;
+
+  console.log(
+    title,
+    subject,
+    period,
+    skills,
+    mock,
+    site,
+    video,
+    github,
+    reviews,
+    role,
+    notice,
+  );
 
   const [playVideo, setPlayVideo] = useState<boolean>(false);
   const [videoUrl, setVideoUrl] = useState<string>();
@@ -187,12 +233,30 @@ export default function ProjectPopup({
           </Viewer>
           {notice && <Notice>※ {notice}</Notice>}
         </ViewArea>
-        <Detail>
+        <Summary>
           <Title>
             <em>{title}</em>
           </Title>
           <SubjectText>{subject}</SubjectText>
-        </Detail>
+        </Summary>
+        <DetailList>
+          <Detail>
+            <DetailTitle>작업기간</DetailTitle>
+            <DetailContent>
+              <DetailText>{period}</DetailText>
+            </DetailContent>
+          </Detail>
+          <Detail>
+            <DetailTitle>
+              프로젝트를 통해
+              <br />
+              느낀점
+            </DetailTitle>
+            <DetailContent>
+              <DetailText>{reviews}</DetailText>
+            </DetailContent>
+          </Detail>
+        </DetailList>
       </Popup>
       {playVideo && videoUrl && title && (
         <Player url={videoUrl} title={title} onHidePlayer={onHidePlayer} />

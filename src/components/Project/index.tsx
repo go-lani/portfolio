@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ProjectCategory from './ProjectCategory';
 import projectDatas from '../../datas/project.json';

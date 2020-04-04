@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import styled, { keyframes, css } from 'styled-components';
+import React, { useEffect } from 'react';
+import styled, { keyframes } from 'styled-components';
 import ModalPortal from './ModalPotal';
 import media from '../../libs/MediaQuery';
 
@@ -70,6 +70,38 @@ const PopupInner = styled.div`
   animation-timing-function: ease-out;
   animation-name: ${slideUp};
   animation-fill-mode: forwards;
+
+  &:before {
+    position: absolute;
+    top: 66px;
+    right: 30px;
+    left: 30px;
+    z-index: 2;
+    content: '';
+    height: 50px;
+    background-color: rgba(31, 31, 39, 0);
+    background-image: linear-gradient(
+      0deg,
+      rgba(31, 31, 39, 0) 0%,
+      rgba(31, 31, 39, 1) 100%
+    );
+  }
+
+  &:after {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    left: 30px;
+    content: '';
+    z-index: 2;
+    height: 50px;
+    background-color: rgba(31, 31, 39, 0);
+    background-image: linear-gradient(
+      0deg,
+      rgba(31, 31, 39, 1) 0%,
+      rgba(31, 31, 39, 0) 100%
+    );
+  }
 `;
 
 const Header = styled.div`
@@ -125,6 +157,7 @@ const Content = styled.div`
   height: 100%;
   max-height: calc(100% - 60px);
   color: #fff;
+  padding: 30px 0;
 `;
 
 type PopupProps = {

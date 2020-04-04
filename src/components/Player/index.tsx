@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import styled, { keyframes, css } from 'styled-components';
+import React from 'react';
+import styled, { keyframes } from 'styled-components';
 import media from '../../libs/MediaQuery';
 import ModalPortal from '../Popup/ModalPotal';
 
