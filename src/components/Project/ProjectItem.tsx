@@ -172,11 +172,27 @@ const Skill = styled.li`
   color: #fff;
 `;
 
+type RoleType = {
+  img: string | null;
+  text: string;
+};
+
 type ProjectItemProps = {
   id: number;
+  type: string;
   title: string;
+  subject: string;
+  period: string;
   thumb: string;
   skills: string[];
+  mock: string;
+  video: string | null;
+  site: string | null;
+  github: string | null;
+  reviews: string[];
+  notice?: string;
+  people?: string;
+  role: RoleType[];
   onViewDetail: (id: number) => void;
 };
 

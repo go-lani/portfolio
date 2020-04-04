@@ -38,6 +38,7 @@ type ProjectData = {
   github: string | null;
   reviews: string[];
   notice?: string;
+  people?: string;
   role: RoleType[];
 };
 

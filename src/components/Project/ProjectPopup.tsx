@@ -24,6 +24,7 @@ type dataType = {
   github: string | null;
   reviews: string[];
   notice?: string;
+  people?: string;
   role: RoleType[];
 };
 
@@ -210,22 +211,9 @@ export default function ProjectPopup({
     github,
     reviews,
     role,
+    people,
     notice,
   } = selectProject;
-
-  console.log(
-    title,
-    subject,
-    period,
-    skills,
-    mock,
-    site,
-    video,
-    github,
-    reviews,
-    role,
-    notice,
-  );
 
   const [playVideo, setPlayVideo] = useState<boolean>(false);
   const [videoUrl, setVideoUrl] = useState<string>();
@@ -281,6 +269,14 @@ export default function ProjectPopup({
           <SubjectText>{subject}</SubjectText>
         </Summary>
         <DetailList>
+          {people && (
+            <Detail>
+              <DetailTitle>참여 인원</DetailTitle>
+              <DetailContent>
+                <DetailText>{people}</DetailText>
+              </DetailContent>
+            </Detail>
+          )}
           <Detail>
             <DetailTitle>작업 기간</DetailTitle>
             <DetailContent>
