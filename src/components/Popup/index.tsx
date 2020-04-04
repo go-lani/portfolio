@@ -157,7 +157,7 @@ const Content = styled.div`
   height: 100%;
   max-height: calc(100% - 60px);
   color: #fff;
-  padding: 30px 0;
+  padding: 30px 10px;
 `;
 
 type PopupProps = {

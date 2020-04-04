@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { v4 as uuidv4 } from 'uuid';
 import media from '../../libs/MediaQuery';
 import Popup from '../Popup';
 import Player from '../Player';
@@ -121,19 +122,16 @@ const SubjectText = styled.p`
   font-size: 1.8rem;
   line-height: 1.5;
   word-break: keep-all;
-/*
-  ${media.mobile`
-    font-size: 1.4rem;
-  `} */
 `;
 
 const DetailList = styled.ul``;
 
 const Detail = styled.li`
   display: flex;
+  margin: 0 0 30px;
 
-  & + & {
-    margin: 30px 0 0;
+  &:last-child {
+    margin: 0;
   }
 `;
 
@@ -152,6 +150,31 @@ const DetailContent = styled.div`
 
 const DetailText = styled.p`
   word-break: keep-all;
+  margin: 0 0 10px;
+
+  &:last-child {
+    margin: 0;
+  }
+`;
+
+const SkillList = styled.ul`
+  overflow: hidden;
+  margin: 0 0 -10px;
+`;
+
+const SkillItem = styled.li`
+  display: inline-block;
+  margin: 0 10px 10px 0;
+  padding: 5px 10px;
+  background: #afafaf;
+  border-radius: 2px;
+
+  &.alpha {
+    margin: 0 0 10px;
+    padding: 0;
+    background: none;
+    line-height: 34px;
+  }
 `;
 
 export default function ProjectPopup({
@@ -241,10 +264,29 @@ export default function ProjectPopup({
         </Summary>
         <DetailList>
           <Detail>
-            <DetailTitle>작업기간</DetailTitle>
+            <DetailTitle>작업 기간</DetailTitle>
             <DetailContent>
               <DetailText>{period}</DetailText>
             </DetailContent>
+          </Detail>
+          <Detail>
+            <DetailTitle>사용 기술</DetailTitle>
+            <DetailContent>
+              <SkillList>
+                {skills &&
+                  skills.map(skill => (
+                    <SkillItem key={uuidv4()}>{skill}</SkillItem>
+                  ))}
+                <SkillItem className="alpha">+ α</SkillItem>
+              </SkillList>
+            </DetailContent>
+          </Detail>
+          <Detail>
+            <DetailTitle>
+              맡은 역할 및<br />
+              구현항목
+            </DetailTitle>
+            <DetailContent></DetailContent>
           </Detail>
           <Detail>
             <DetailTitle>
@@ -253,7 +295,10 @@ export default function ProjectPopup({
               느낀점
             </DetailTitle>
             <DetailContent>
-              <DetailText>{reviews}</DetailText>
+              {reviews &&
+                reviews.map(review => (
+                  <DetailText key={uuidv4()}>{review}</DetailText>
+                ))}
             </DetailContent>
           </Detail>
         </DetailList>

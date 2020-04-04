@@ -12,7 +12,7 @@
     "video": "https://www.youtube.com/embed/c5cS4_h57QE",
     "site": "http://festa.s3-website.ap-northeast-2.amazonaws.com/",
     "github": "https://github.com/publizm/festa",
-    "reviews": ["개발 도중 API 요청을 변경해야 되는 상황이 빈번히 발생되어 개발 전 백엔드 개발자와 소통하여 가이드라인을 잡아야 된다는 것을 느낌", "데이터의 복잡성이 떨어지고 서버측에서 미리 데이터를 가공하여 넘겨줘서 Redux/Redux-saga 대신 Context API로 전역 상태를 관리했는데 Redux를 사용했을때보다 디렉토리의 복잡도는 확실히 떨어지나, 파일 내부의 코드의 복잡성이 올라가는 점을 느낌"],
+    "reviews": ["개발 도중 API 요청을 변경해야 되는 상황이 빈번히 발생되어 개발 전 백엔드 개발자와 소통하여 가이드 라인을 잡아야 된다는 것을 느낌", "데이터의 복잡성이 떨어지고 서버측에서 미리 데이터를 가공하여 넘겨줘서 Redux/Redux-saga 대신 Context API로 전역 상태를 관리했는데 Redux를 사용했을때보다 디렉토리의 복잡도는 확실히 떨어지나, 파일 내부의 코드의 복잡성이 올라가는 점을 느낌"],
     "role": [
       {
         "img": null,
@@ -236,7 +236,7 @@
     "video": null,
     "site": null,
     "github": "https://github.com/publizm/onello",
-    "reviews": ["Typescript 사용시 IDE에서 자동완성을 해주어 편리함을 느낌", "규모가 작은 프로젝트이므로 타입의 강제성에 대한 장점을 많이 느끼진 못했지만 여러명의 개발자가 하나의 서비스를 제공할때 사용시 매우 유용할 것 같다고 생각됨", "Type 설정시 어떤 타입인지 알아야되서 어려움이 있었음"],
+    "reviews": ["Typescript 사용시 IDE에서 자동완성을 해주어 편리함을 느낌", "규모가 작은 프로젝트이므로 타입의 강제성에 대한 장점을 많이 느끼진 못했지만 여러명의 개발자가 하나의 서비스를 제공할때 사용시 매우 유용할 것 같다고 느낌", "Type 설정시 어떤 타입인지 알아야되서 어려움이 있었음"],
     "role": [
       {
         "img": null,
@@ -272,7 +272,7 @@
     "video": null,
     "site": "http://mybookslist.s3-website.ap-northeast-2.amazonaws.com/signin",
     "github": "https://github.com/publizm/books-review",
-    "reviews": ["Token을 이용한 로그인/로그아웃 처리하는 방법", "connect 함수를 이용하여 컴포넌트와 로직을 분리하는 방법", "Ducks 패턴의 장점을 느낌"],
+    "reviews": ["Token을 이용한 로그인/로그아웃 처리하는 방법", "connect 함수를 이용하여 컴포넌트와 로직을 분리하는 방법", "Ducks 패턴을 활용하여 action type과 action 그리고 reducer를 하나의 파일로 관리하여 Ducks 패턴의 편리함을 느낌"],
     "role": [
       {
         "img": null,
