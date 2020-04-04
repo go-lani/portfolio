@@ -112,6 +112,16 @@ const Visual = styled.div`
       opacity: 0;
       transform: translateY(40%);
       transition: all 0.5s;
+
+      ${media.mobile`
+        opacity: 1;
+        transform: translateY(0);
+      `}
+
+      ${media.tablet`
+        opacity: 1;
+        transform: translateY(0);
+      `}
     }
   }
 
