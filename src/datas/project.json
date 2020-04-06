@@ -327,7 +327,7 @@
     "mock": "./images/youtube-mock.png",
     "video": null,
     "site": null,
-    "github": "https://github.com/publizm/onello",
+    "github": "https://github.com/publizm/youtube",
     "reviews": ["첫 React 프로젝트로 React의 전반적인 흐름을 느낌", "컴포넌트의 분리와 활용법을 느낌", "상황에 맞는 적절한 라이브러리를 찾고 활용하는 방법을 느낌", "SPA에서의 Redux는 상태이므로 새로고침시 모든 상태가 초기화되어 서버의 필요성을 느낌"],
     "role": [
       {
