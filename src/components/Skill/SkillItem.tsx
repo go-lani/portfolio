@@ -9,7 +9,7 @@ const Item = styled.li`
   margin: 0 0 20px 20px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
-  background: #f7f7f7;
+  background: #fff;
 
   &:first-child {
     margin-left: 0;

@@ -18,7 +18,7 @@ const InfoArea = styled.div`
   padding: 50px;
   border-radius: 20px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-  background: #f7f7f7;
+  background: #fff;
 
   ${media.mobile`
     align-items: center;
@@ -168,9 +168,9 @@ export default React.forwardRef<HTMLElement, AboutProps>(function About(
           </Info>
           <Intro>
             <p>
-              2017년부터 마크업과 UI 개발을 하였으며, 현재는 프론트엔드 개발
+              2017년부터 마크업 및 UI 개발을 하였고, 현재는 프론트엔드 개발
               전반에 관심이 있어 React, Typescript 등 주력 기술로서 사용하고
-              있으며, 친숙해지기 위해 노력하고 있습니다.
+              있으며, 능숙해지기 위해 노력하고 있습니다.
               <br />
               프론트엔드 개발자로서 사용자와 가장 가까운 위치에서 소통하며 좋은
               서비스를 제공하기 위해 꾸준히 발전하여 사용자와 동료 개발자를

@@ -13,7 +13,7 @@ const Container = styled.div<{ contentsHeight: number | undefined }>`
   position: relative;
   width: 100%;
   height: ${({ contentsHeight }) => contentsHeight && contentsHeight + 'px'};
-  background: #eaeaea;
+  background: #f2f6fd;
 `;
 
 function App() {
