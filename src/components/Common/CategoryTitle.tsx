@@ -7,6 +7,7 @@ const Title = styled.h3`
   font-weight: 700;
   font-size: 8rem;
   color: #222;
+  letter-spacing: 0.3em;
 
   ${media.tablet`
     font-size: 6rem;

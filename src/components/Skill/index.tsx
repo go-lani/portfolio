@@ -27,8 +27,8 @@ export default React.forwardRef<HTMLElement, SkillProps>(function Skill(
   return (
     <SkillLayout ref={ref}>
       <CategoryTitle title="SKILLS" />
-      <SkillCategory category="SKILL" datas={skills} />
-      <SkillCategory category="ETC" datas={etcs} />
+      <SkillCategory category="Skill" datas={skills} />
+      <SkillCategory category="Etc." datas={etcs} />
     </SkillLayout>
   );
 });

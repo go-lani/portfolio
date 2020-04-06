@@ -59,7 +59,7 @@ export default React.memo(function Project() {
 
   return (
     <ProjectLayout>
-      <CategoryTitle title="Project" />
+      <CategoryTitle title="PROJECT" />
       <ProjectCategory
         category="Team"
         onViewDetail={onViewDetail}

@@ -18,7 +18,7 @@ const InfoArea = styled.div`
   padding: 50px;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background: #e0e0e0;
+  background: #e9e9eb;
 
   ${media.mobile`
     align-items: center;
@@ -129,7 +129,7 @@ export default React.forwardRef<HTMLElement, AboutProps>(function About(
 ) {
   return (
     <AboutLayout ref={ref}>
-      <CategoryTitle title="About me" />
+      <CategoryTitle title="ABOUT ME" />
       <InfoArea>
         <ImgBox>
           <img src="./images/leecheolhwan.jpg" alt="" />
