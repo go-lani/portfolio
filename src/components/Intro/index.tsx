@@ -17,7 +17,8 @@ const IntroLayout = styled.section<{
   z-index: 2;
   width: 100%;
   height: 100vh;
-  background: #1b1817;
+  background: url(./images/intro-bg.jpg) center center no-repeat;
+  background-size: cover;
   padding: 200px;
 
   ${media.tablet`
