@@ -22,7 +22,7 @@
     "type": "skill",
     "title": "Javascript",
     "level": 80,
-    "description": "스코프, 호이스팅 그리고 클로저 등 자바스크립트의 핵심 개념을 이해하고 있으며, ES6+ 문법을 활용하여 Modern Javascript 개발을 지향하고 있습니다.",
+    "description": "this, 스코프, 호이스팅 그리고 클로저 등 자바스크립트의 핵심 개념을 이해하고 있으며, ES6+ 문법을 활용하여 Modern Javascript 개발을 지향하고 있습니다.",
     "logo": "./images/js-logo.png",
     "color": "#f9d91f"
   },

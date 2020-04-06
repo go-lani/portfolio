@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 import media from '../../libs/MediaQuery';
@@ -35,9 +35,35 @@ type PopupProps = {
 
 const MockImg = styled.div`
   margin: 0 0 20px;
+  min-height: 250px;
+
   img {
     width: 100%;
   }
+
+  ${media.tablet`
+    min-height: 250px;
+  `}
+
+  ${media.mobile`
+    min-height: 85px;
+  `}
+`;
+
+const ImgLoader = styled(MockImg)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 50px;
+  }
+
+  ${media.mobile`
+    img {
+      width: 40px;
+    }
+  `}
 `;
 
 const ViewArea = styled.div`
@@ -64,6 +90,7 @@ const ViewerItem = styled.li`
   & + & {
     margin: 0 0 0 10px;
   }
+
   a,
   button {
     display: block;
@@ -129,7 +156,7 @@ const DetailList = styled.ul``;
 
 const Detail = styled.li`
   display: flex;
-  margin: 0 0 30px;
+  margin: 0 0 40px;
 
   &:last-child {
     margin: 0;
@@ -181,20 +208,26 @@ const SkillItem = styled.li`
 const RoleList = styled.ul``;
 
 const RoleItem = styled.li`
-  margin: 0 0 10px;
+  margin: 0 0 25px;
 
   &:last-child {
     margin: 0;
   }
 `;
-const RoleItemImgBox = styled.div`
-  margin: 0 0 5px;
 
+const RoleItemImgBox = styled.div`
+  overflow: hidden;
+  margin: 15px 0 0;
+  background: #232222;
+  padding: 10px;
+  border-radius: 5px;
   img {
     max-width: 100%;
   }
 `;
-const RoleItemText = styled.p``;
+const RoleItemText = styled.p`
+  word-break: keep-all;
+`;
 
 export default function ProjectPopup({
   selectProject,
@@ -215,6 +248,7 @@ export default function ProjectPopup({
     notice,
   } = selectProject;
 
+  const [loading, setLoading] = useState<boolean>(true);
   const [playVideo, setPlayVideo] = useState<boolean>(false);
   const [videoUrl, setVideoUrl] = useState<string>();
 
@@ -227,12 +261,22 @@ export default function ProjectPopup({
     setPlayVideo(false);
   };
 
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 1000);
+  }, []);
+
   return (
     <>
       <Popup onHidePopup={onHidePopup}>
-        <MockImg>
-          <img src={mock} alt="" />
-        </MockImg>
+        {loading ? (
+          <ImgLoader>
+            <img src="./images/spinner.gif" alt="" />
+          </ImgLoader>
+        ) : (
+          <MockImg>
+            <img src={mock} alt="" />
+          </MockImg>
+        )}
         <ViewArea>
           <Viewer>
             <ViewerTitle>바로가기</ViewerTitle>
@@ -304,12 +348,12 @@ export default function ProjectPopup({
               <RoleList>
                 {role.map(r => (
                   <RoleItem key={uuidv4()}>
+                    <RoleItemText>{r.text}</RoleItemText>
                     {r.img && (
                       <RoleItemImgBox>
                         <img src={r.img} alt="" />
                       </RoleItemImgBox>
                     )}
-                    <RoleItemText>{r.text}</RoleItemText>
                   </RoleItem>
                 ))}
               </RoleList>
