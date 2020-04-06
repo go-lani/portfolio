@@ -266,34 +266,17 @@ export default function ProjectPopup({
     setPlayVideo(false);
   };
 
-<<<<<<< HEAD
-  const onLoadedImage = () => {
-    setLoading(false);
-=======
   const onLoadImage = () => {
     setTimeout(() => setLoading(false), 1000);
->>>>>>> 8259c77f60e98e6f59d1cb9ff9c252ff1b0eee1e
   };
 
   return (
     <>
       <Popup onHidePopup={onHidePopup}>
-<<<<<<< HEAD
-        {loading ? (
-          <ImgLoader>
-            <img src="./images/spinner.gif" alt="" />
-          </ImgLoader>
-        ) : (
-          <MockImg>
-            <img src={mock} alt="" onLoad={onLoadedImage} />
-          </MockImg>
-        )}
-=======
         <MockImg loaded={!loading}>
           {loading && <img src="./images/spinner.gif" alt="" />}
           <img src={mock} onLoad={onLoadImage} className="mock-img" alt="" />
         </MockImg>
->>>>>>> 8259c77f60e98e6f59d1cb9ff9c252ff1b0eee1e
         <ViewArea>
           <Viewer>
             <ViewerTitle>바로가기</ViewerTitle>
