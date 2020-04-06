@@ -261,9 +261,9 @@ export default function ProjectPopup({
     setPlayVideo(false);
   };
 
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 1000);
-  }, []);
+  const onLoadedImage = () => {
+    setLoading(false);
+  };
 
   return (
     <>
@@ -274,7 +274,7 @@ export default function ProjectPopup({
           </ImgLoader>
         ) : (
           <MockImg>
-            <img src={mock} alt="" />
+            <img src={mock} alt="" onLoad={onLoadedImage} />
           </MockImg>
         )}
         <ViewArea>
