@@ -7,7 +7,7 @@ const Item = styled.li`
   width: calc(50% - 10px);
   padding: 30px;
   margin: 0 0 20px 20px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   background: #f7f7f7;
 
@@ -94,12 +94,12 @@ const Bar = styled.span<{ level: number; color: string }>`
 const DetailArea = styled.div``;
 
 const Title = styled.p`
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin: 0 0 10px;
 `;
 
 const Description = styled.p`
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1.5;
   word-break: keep-all;
 `;

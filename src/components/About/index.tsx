@@ -17,7 +17,7 @@ const InfoArea = styled.div`
   margin: 0 auto;
   padding: 50px;
   border-radius: 20px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   background: #f7f7f7;
 
   ${media.mobile`
