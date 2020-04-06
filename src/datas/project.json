@@ -283,7 +283,7 @@
   {
     "id": 6,
     "type": "personal",
-    "title": "Books Reivew",
+    "title": "Books Review",
     "subject": "개발서적에 대한 리뷰와 읽을 책을 기록하는 웹 애플리케이션",
     "period": "2020.01.17 ~ 2020.02.11",
     "thumb": "./images/books-thumb.jpg",
