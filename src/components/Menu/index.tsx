@@ -37,8 +37,7 @@ const Trigger = styled.span<{ menuActive: boolean; isIntro: boolean }>`
     text-indent: -9999em;
     transform: scaleX(1);
     transition: all 0.3s;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    background: #2f404f;
 
     ${({ menuActive }) =>
       menuActive &&
@@ -55,9 +54,8 @@ const Trigger = styled.span<{ menuActive: boolean; isIntro: boolean }>`
     left: 0;
     width: 30px;
     height: 2px;
-    background: #fff;
+    background: #2f404f;
     transition: all 0.3s;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 
     ${({ menuActive }) =>
       menuActive &&
@@ -67,6 +65,7 @@ const Trigger = styled.span<{ menuActive: boolean; isIntro: boolean }>`
         transform: rotate(45deg);
       `}
   }
+
   &:after {
     content: '';
     position: absolute;
@@ -74,9 +73,8 @@ const Trigger = styled.span<{ menuActive: boolean; isIntro: boolean }>`
     left: 0;
     width: 30px;
     height: 2px;
-    background: #fff;
+    background: #2f404f;
     transition: all 0.3s;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 
     ${({ menuActive }) =>
       menuActive &&
@@ -86,6 +84,22 @@ const Trigger = styled.span<{ menuActive: boolean; isIntro: boolean }>`
         transform: rotate(-45deg);
       `}
   }
+
+  ${({ isIntro }) =>
+    isIntro &&
+    css`
+      > span {
+        background: #fff;
+      }
+
+      &:before {
+        background: #fff;
+      }
+
+      &:after {
+        background: #fff;
+      }
+    `}
 `;
 
 type MenuProps = {
