@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react';
+import styled, { css } from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 import media from '../../libs/MediaQuery';
 import Popup from '../Popup';
@@ -33,12 +33,15 @@ type PopupProps = {
   selectProject: dataType;
 };
 
-const MockImg = styled.div`
+const MockImg = styled.div<{ loaded: boolean }>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 0 20px;
   min-height: 250px;
 
   img {
-    width: 100%;
+    width: 50px;
   }
 
   ${media.tablet`
@@ -47,23 +50,24 @@ const MockImg = styled.div`
 
   ${media.mobile`
     min-height: 85px;
-  `}
-`;
 
-const ImgLoader = styled(MockImg)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  img {
-    width: 50px;
-  }
-
-  ${media.mobile`
     img {
       width: 40px;
     }
   `}
+
+  .mock-img {
+    display: none;
+    width: 100%;
+  }
+
+  ${({ loaded }) =>
+    loaded &&
+    css`
+      .mock-img {
+        display: block;
+      }
+    `}
 `;
 
 const ViewArea = styled.div`
@@ -221,6 +225,7 @@ const RoleItemImgBox = styled.div`
   background: #232222;
   padding: 10px;
   border-radius: 5px;
+
   img {
     max-width: 100%;
   }
@@ -261,22 +266,17 @@ export default function ProjectPopup({
     setPlayVideo(false);
   };
 
-  useEffect(() => {
+  const onLoadImage = () => {
     setTimeout(() => setLoading(false), 1000);
-  }, []);
+  };
 
   return (
     <>
       <Popup onHidePopup={onHidePopup}>
-        {loading ? (
-          <ImgLoader>
-            <img src="./images/spinner.gif" alt="" />
-          </ImgLoader>
-        ) : (
-          <MockImg>
-            <img src={mock} alt="" />
-          </MockImg>
-        )}
+        <MockImg loaded={!loading}>
+          {loading && <img src="./images/spinner.gif" alt="" />}
+          <img src={mock} onLoad={onLoadImage} className="mock-img" alt="" />
+        </MockImg>
         <ViewArea>
           <Viewer>
             <ViewerTitle>바로가기</ViewerTitle>
