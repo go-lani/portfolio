@@ -18,7 +18,8 @@ const Container = styled.div<{ contentsHeight: number | undefined }>`
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
-  const [menuActive, setMenuActive] = useState<boolean>(false);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [menuActive, setMenuActive] = useState<boolean>(true);
   const [isIntro, setIsintro] = useState<boolean>(true);
   const [mainScroll, setMainScroll] = useState<number>(0);
   const [contentScroll, setContentScroll] = useState<number>(0);
@@ -56,12 +57,16 @@ function App() {
   useEffect(() => {
     if (mainScroll >= introHeight) {
       setIsintro(false);
+      setMenuActive(false);
       setContentScroll(mainScroll - introHeight);
+      if (mainScroll > introHeight + aboutHeight + skillHeight) {
+        setMenuActive(true);
+      }
     } else {
       setIsintro(true);
       setContentScroll(0);
     }
-  }, [mainScroll, introHeight]);
+  }, [mainScroll, introHeight, aboutHeight, skillHeight]);
 
   useEffect(() => {
     window.addEventListener('scroll', onScroll);
@@ -71,13 +76,13 @@ function App() {
   }, [onScroll]);
 
   const menuToggle = () => {
-    setMenuActive(!menuActive);
+    setMenuOpen(!menuOpen);
   };
 
   const move = (scrolling: number) => {
     setContentScroll(scrolling);
     window.scrollTo(0, scrolling);
-    setMenuActive(!menuActive);
+    setMenuOpen(!menuOpen);
   };
 
   const moveToSection = (category: string) => {
@@ -86,12 +91,14 @@ function App() {
     if (category === 'HOME') {
       move(0);
       setIsintro(true);
+      setMenuActive(true);
     } else if (category === 'ABOUT') {
       move(introHeight);
     } else if (category === 'SKILL') {
       move(introHeight + aboutHeight);
     } else if (category === 'PROJECT') {
       move(introHeight + aboutHeight + skillHeight);
+      setMenuActive(true);
     }
   };
 
@@ -102,9 +109,9 @@ function App() {
         <A11yTitle as="h1">이철환의 포트폴리오</A11yTitle>
         <Menu
           moveToSection={moveToSection}
-          menuActive={menuActive}
+          menuOpen={menuOpen}
           menuToggle={menuToggle}
-          isIntro={isIntro}
+          menuActive={menuActive}
         />
         <Intro
           mainScroll={mainScroll}

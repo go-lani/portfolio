@@ -96,7 +96,7 @@ const Visual = styled.div`
     position: absolute;
     text-align: center;
     width: 200px;
-    background: rgba(195, 195, 195, 0.4);
+    background: rgba(195, 195, 195, 0.2);
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
     z-index: 1;
     font-size: 1.6rem;
@@ -178,7 +178,7 @@ const Skill = styled.li`
   margin: 0 10px 10px 0;
   padding: 5px 10px;
   border-radius: 5px;
-  background: #afafaf;
+  background: #0b6fc3;
   color: #fff;
 `;
 

@@ -7,10 +7,18 @@ import ProjectPopup from './ProjectPopup';
 import media from '../../libs/MediaQuery';
 
 const ProjectLayout = styled.section`
-  padding: 100px 0;
+  margin: 0 -80px;
+  padding: 100px 80px;
+  background: #1d2231;
+
+  ${media.tablet`
+    margin: 0 -60px;
+    padding: 100px 60px;
+  `}
 
   ${media.mobile`
-    padding: 50px 0;
+    margin: 0 -30px;
+    padding: 50px 30px;
   `}
 `;
 
@@ -59,7 +67,7 @@ export default React.memo(function Project() {
 
   return (
     <ProjectLayout>
-      <CategoryTitle title="PROJECT" />
+      <CategoryTitle color="#fff" title="PROJECT" />
       <ProjectCategory
         category="Team"
         onViewDetail={onViewDetail}
