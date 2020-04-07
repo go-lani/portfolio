@@ -178,7 +178,7 @@ const Skill = styled.li`
   margin: 0 10px 10px 0;
   padding: 5px 10px;
   border-radius: 5px;
-  background: #0b6fc3;
+  background: #4b78ff;
   color: #fff;
 `;
 
