@@ -61,7 +61,7 @@ export default React.memo(function ProjectCategory({
 }: PortFolioProps) {
   return (
     <ContentBox>
-      <CategorySubTitle>{`${category} Project`}</CategorySubTitle>
+      <CategorySubTitle color="#fff">{`${category} Project`}</CategorySubTitle>
       <ProjectList>
         {datas.map(data => (
           <ProjectItem key={uuidv4()} onViewDetail={onViewDetail} {...data} />

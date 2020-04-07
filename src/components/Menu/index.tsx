@@ -18,7 +18,7 @@ const MenuTrigger = styled.button`
   `}
 `;
 
-const Trigger = styled.span<{ menuActive: boolean; isIntro: boolean }>`
+const Trigger = styled.span<{ menuOpen: boolean; menuActive: boolean }>`
   display: inline-block;
   position: absolute;
   top: 50%;
@@ -39,8 +39,8 @@ const Trigger = styled.span<{ menuActive: boolean; isIntro: boolean }>`
     transition: all 0.3s;
     background: #2f404f;
 
-    ${({ menuActive }) =>
-      menuActive &&
+    ${({ menuOpen }) =>
+      menuOpen &&
       css`
         transform: scaleX(0);
         opacity: 0;
@@ -57,8 +57,8 @@ const Trigger = styled.span<{ menuActive: boolean; isIntro: boolean }>`
     background: #2f404f;
     transition: all 0.3s;
 
-    ${({ menuActive }) =>
-      menuActive &&
+    ${({ menuOpen }) =>
+      menuOpen &&
       css`
         top: 0;
         background: #fff;
@@ -76,8 +76,8 @@ const Trigger = styled.span<{ menuActive: boolean; isIntro: boolean }>`
     background: #2f404f;
     transition: all 0.3s;
 
-    ${({ menuActive }) =>
-      menuActive &&
+    ${({ menuOpen }) =>
+      menuOpen &&
       css`
         bottom: 0;
         background: #fff;
@@ -85,8 +85,8 @@ const Trigger = styled.span<{ menuActive: boolean; isIntro: boolean }>`
       `}
   }
 
-  ${({ isIntro }) =>
-    isIntro &&
+  ${({ menuActive }) =>
+    menuActive &&
     css`
       > span {
         background: #fff;
@@ -103,27 +103,27 @@ const Trigger = styled.span<{ menuActive: boolean; isIntro: boolean }>`
 `;
 
 type MenuProps = {
+  menuOpen: boolean;
   menuActive: boolean;
-  isIntro: boolean;
   menuToggle: () => void;
   moveToSection: (category: string) => void;
 };
 export default function Menu({
-  moveToSection,
+  menuOpen,
   menuActive,
+  moveToSection,
   menuToggle,
-  isIntro,
 }: MenuProps) {
   return (
     <>
       <MenuTrigger type="button" onClick={menuToggle}>
-        <Trigger menuActive={menuActive} isIntro={isIntro}>
-          <span>{!menuActive ? '열기' : '닫기'}</span>
+        <Trigger menuOpen={menuOpen} menuActive={menuActive}>
+          <span>{!menuOpen ? '열기' : '닫기'}</span>
         </Trigger>
       </MenuTrigger>
       <MenuBox
         moveToSection={moveToSection}
-        menuActive={menuActive}
+        menuOpen={menuOpen}
         menuToggle={menuToggle}
       />
     </>

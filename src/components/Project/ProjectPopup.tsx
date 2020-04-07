@@ -230,6 +230,7 @@ const RoleItemImgBox = styled.div`
     max-width: 100%;
   }
 `;
+
 const RoleItemText = styled.p`
   word-break: keep-all;
 `;

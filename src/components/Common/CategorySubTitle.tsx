@@ -1,22 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import media from '../../libs/MediaQuery';
 
-const Title = styled.p`
+const Title = styled.p<{ color?: string }>`
   margin: 0 0 40px;
   font-weight: 700;
-  font-size: 4rem;
-  color: #2f404f;
-
-  ${media.desktop`
-    font-size: 5rem;
-  `}
+  font-size: 3.5rem;
+  color: ${({ color }) => (color ? color : '#2f404f')};
 `;
 
 type CategoryProps = {
   children: string;
+  color?: string;
 };
 
-export default function CategorySubTitle({ children }: CategoryProps) {
-  return <Title>{children}</Title>;
+export default function CategorySubTitle({ color, children }: CategoryProps) {
+  return <Title color={color}>{children}</Title>;
 }

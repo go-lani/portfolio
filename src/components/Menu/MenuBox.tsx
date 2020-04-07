@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 import A11yTitle from '../Common/A11yTitle';
 
-const MenuBoxLayout = styled.nav<{ menuActive: boolean }>`
+const MenuBoxLayout = styled.nav<{ menuOpen: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,8 +18,8 @@ const MenuBoxLayout = styled.nav<{ menuActive: boolean }>`
   border-radius: 0 25% 25% 25%;
   opacity: 0;
 
-  ${({ menuActive }) =>
-    menuActive &&
+  ${({ menuOpen }) =>
+    menuOpen &&
     css`
       width: 100%;
       height: 100%;
@@ -30,13 +30,13 @@ const MenuBoxLayout = styled.nav<{ menuActive: boolean }>`
     `}
 `;
 
-const MenuList = styled.ul<{ menuActive: boolean }>`
+const MenuList = styled.ul<{ menuOpen: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  ${({ menuActive }) =>
-    !menuActive &&
+  ${({ menuOpen }) =>
+    !menuOpen &&
     css`
       opacity: 0;
     `}
@@ -65,7 +65,7 @@ const MenuItem = styled.li`
 `;
 
 type MenuProps = {
-  menuActive: boolean;
+  menuOpen: boolean;
   menuToggle: () => void;
   moveToSection: (category: string) => void;
 };
@@ -74,13 +74,13 @@ const menuItems = ['HOME', 'ABOUT', 'SKILL', 'PROJECT'];
 
 export default function MenuBox({
   moveToSection,
-  menuActive,
+  menuOpen,
   menuToggle,
 }: MenuProps): JSX.Element {
   return (
-    <MenuBoxLayout menuActive={menuActive}>
+    <MenuBoxLayout menuOpen={menuOpen}>
       <A11yTitle>메뉴</A11yTitle>
-      <MenuList menuActive={menuActive}>
+      <MenuList menuOpen={menuOpen}>
         {menuItems.map(item => (
           <MenuItem key={uuidv4()}>
             <button type="button" onClick={() => moveToSection(item)}>
