@@ -64,6 +64,7 @@ function App() {
       }
     } else {
       setIsintro(true);
+      setMenuActive(true);
       setContentScroll(0);
     }
   }, [mainScroll, introHeight, aboutHeight, skillHeight]);
