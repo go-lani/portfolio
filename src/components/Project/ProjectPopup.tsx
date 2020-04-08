@@ -5,34 +5,6 @@ import media from '../../libs/MediaQuery';
 import Popup from '../Popup';
 import Player from '../Player';
 
-type RoleType = {
-  img: string | null;
-  text: string;
-};
-
-type dataType = {
-  id: number;
-  type: string;
-  title: string;
-  subject: string;
-  period: string;
-  thumb: string;
-  skills: string[];
-  mock: string;
-  video: string | null;
-  site: string | null;
-  github: string | null;
-  reviews: string[];
-  notice?: string;
-  people?: string;
-  role: RoleType[];
-};
-
-type PopupProps = {
-  onHidePopup: () => void;
-  selectProject: dataType;
-};
-
 const MockImg = styled.div<{ loaded: boolean }>`
   display: flex;
   justify-content: center;
@@ -167,11 +139,23 @@ const Detail = styled.li`
   }
 `;
 
-const DetailTitle = styled.p`
+const DetailTitleArea = styled.div`
   width: 200px;
-  font-weight: 700;
-  font-size: 1.8rem;
-  line-height: 1.5;
+
+  p {
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 1.5;
+  }
+
+  a {
+    display: inline-block;
+    margin: 10px 0 0;
+    padding: 10px;
+    background: #108282;
+    border-radius: 2px;
+    font-size: 1.4rem;
+  }
 `;
 
 const DetailContent = styled.div`
@@ -235,6 +219,35 @@ const RoleItemText = styled.p`
   word-break: keep-all;
 `;
 
+type RoleType = {
+  img: string | null;
+  text: string;
+};
+
+type dataType = {
+  id: number;
+  type: string;
+  title: string;
+  subject: string;
+  period: string;
+  thumb: string;
+  skills: string[];
+  mock: string;
+  video: string | null;
+  site: string | null;
+  github: string | null;
+  reviews: string[];
+  notice?: string;
+  people?: string;
+  reviewDetail?: string;
+  role: RoleType[];
+};
+
+type PopupProps = {
+  onHidePopup: () => void;
+  selectProject: dataType;
+};
+
 export default function ProjectPopup({
   selectProject,
   onHidePopup,
@@ -252,6 +265,7 @@ export default function ProjectPopup({
     role,
     people,
     notice,
+    reviewDetail,
   } = selectProject;
 
   const [loading, setLoading] = useState<boolean>(true);
@@ -316,24 +330,30 @@ export default function ProjectPopup({
         <DetailList>
           {people && (
             <Detail>
-              <DetailTitle>참여 인원</DetailTitle>
+              <DetailTitleArea>
+                <p>참여 인원</p>
+              </DetailTitleArea>
               <DetailContent>
                 <DetailText>{people}</DetailText>
               </DetailContent>
             </Detail>
           )}
           <Detail>
-            <DetailTitle>작업 기간</DetailTitle>
+            <DetailTitleArea>
+              <p>작업 기간</p>
+            </DetailTitleArea>
             <DetailContent>
               <DetailText>{period}</DetailText>
             </DetailContent>
           </Detail>
           <Detail>
-            <DetailTitle>사용 기술</DetailTitle>
+            <DetailTitleArea>
+              <p>사용 기술</p>
+            </DetailTitleArea>
             <DetailContent>
               <SkillList>
                 {skills &&
-                  skills.map(skill => (
+                  skills.map((skill) => (
                     <SkillItem key={uuidv4()}>{skill}</SkillItem>
                   ))}
                 <SkillItem className="alpha">+ α</SkillItem>
@@ -341,13 +361,24 @@ export default function ProjectPopup({
             </DetailContent>
           </Detail>
           <Detail>
-            <DetailTitle>
-              맡은 역할 및<br />
-              구현항목
-            </DetailTitle>
+            <DetailTitleArea>
+              <p>
+                맡은 역할 및<br />
+                구현항목
+              </p>
+              {reviewDetail && (
+                <a
+                  href={reviewDetail}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  자세히 보기
+                </a>
+              )}
+            </DetailTitleArea>
             <DetailContent>
               <RoleList>
-                {role.map(r => (
+                {role.map((r) => (
                   <RoleItem key={uuidv4()}>
                     <RoleItemText>{r.text}</RoleItemText>
                     {r.img && (
@@ -361,14 +392,16 @@ export default function ProjectPopup({
             </DetailContent>
           </Detail>
           <Detail>
-            <DetailTitle>
-              프로젝트를 통해
-              <br />
-              느낀점
-            </DetailTitle>
+            <DetailTitleArea>
+              <p>
+                프로젝트를 통해
+                <br />
+                느낀점
+              </p>
+            </DetailTitleArea>
             <DetailContent>
               {reviews &&
-                reviews.map(review => (
+                reviews.map((review) => (
                   <DetailText key={uuidv4()}>{review}</DetailText>
                 ))}
             </DetailContent>

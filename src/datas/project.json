@@ -13,10 +13,11 @@
     "site": "http://festa.s3-website.ap-northeast-2.amazonaws.com/",
     "github": "https://github.com/publizm/festa",
     "reviews": ["개발 도중 API 요청을 변경해야 되는 상황이 빈번히 발생되어 개발 전 백엔드 개발자와 소통하여 가이드 라인을 잡아야 된다는 것을 느낌", "데이터의 복잡성이 떨어지고 서버측에서 미리 데이터를 가공하여 넘겨줘서 Redux/Redux-saga 대신 Context API로 전역 상태를 관리했는데 Redux를 사용했을때보다 디렉토리의 복잡도는 확실히 떨어지나, 파일 내부의 코드의 복잡성이 올라가는 점을 느낌"],
+    "reviewDetail": "https://github.com/publizm/festa/blob/master/REVIEW.md",
     "role": [
       {
         "img": null,
-        "text": "1. 전체 UI 구현"
+        "text": "1. 전체 프론트엔드 개발"
       },
       {
         "img": "./images/festa-source02.png",

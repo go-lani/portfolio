@@ -202,6 +202,7 @@ type ProjectItemProps = {
   reviews: string[];
   notice?: string;
   people?: string;
+  reviewDetail?: string;
   role: RoleType[];
   onViewDetail: (id: number) => void;
 };
@@ -223,7 +224,7 @@ export default function ProjectItem({
         <p>{title}</p>
       </Visual>
       <SkillList>
-        {skills.map(skill => (
+        {skills.map((skill) => (
           <Skill key={uuidv4()}>{skill}</Skill>
         ))}
       </SkillList>

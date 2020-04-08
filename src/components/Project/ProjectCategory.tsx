@@ -45,6 +45,7 @@ type dataType = {
   reviews: string[];
   notice?: string;
   people?: string;
+  reviewDetail?: string;
   role: RoleType[];
 };
 
@@ -63,7 +64,7 @@ export default React.memo(function ProjectCategory({
     <ContentBox>
       <CategorySubTitle color="#fff">{`${category} Project`}</CategorySubTitle>
       <ProjectList>
-        {datas.map(data => (
+        {datas.map((data) => (
           <ProjectItem key={uuidv4()} onViewDetail={onViewDetail} {...data} />
         ))}
       </ProjectList>

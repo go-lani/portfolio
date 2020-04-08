@@ -22,9 +22,9 @@ const ProjectLayout = styled.section`
   `}
 `;
 
-const teamProjectDatas = projectDatas.filter(data => data.type === 'team');
+const teamProjectDatas = projectDatas.filter((data) => data.type === 'team');
 const personalProjectDatas = projectDatas.filter(
-  data => data.type === 'personal',
+  (data) => data.type === 'personal',
 );
 
 type RoleType = {
@@ -47,6 +47,7 @@ type ProjectData = {
   reviews: string[];
   notice?: string;
   people?: string;
+  reviewDetail?: string;
   role: RoleType[];
 };
 
@@ -55,7 +56,7 @@ export default React.memo(function Project() {
   const [detailVisible, setDetailVisible] = useState<boolean>(false);
 
   const onViewDetail = (id: number) => {
-    const selectData = projectDatas.find(data => data.id === id);
+    const selectData = projectDatas.find((data) => data.id === id);
     if (selectData) setSelectProject(selectData);
     setDetailVisible(true);
   };
