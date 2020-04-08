@@ -9,3 +9,4 @@ gh-pages
 ## 사용 라이브러리
 - styled-components
 - uuid
+- react-app-polyfill
