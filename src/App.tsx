@@ -51,7 +51,7 @@ function App() {
   }, [contentsHeight, introRef, contentRef, aboutRef, skillRef]);
 
   const onScroll = useCallback((e: Event): void => {
-    setMainScroll(Math.floor(window.scrollY));
+    setMainScroll(Math.floor(window.pageYOffset));
   }, []);
 
   useEffect(() => {
