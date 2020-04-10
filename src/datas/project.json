@@ -256,7 +256,7 @@
     "mock": "./images/portfolio-mock.png",
     "video": null,
     "site": null,
-    "github": "https://github.com/publizm/onello",
+    "github": "https://github.com/publizm/portfolio",
     "reviews": ["Typescript 사용시 IDE에서 자동완성을 해주어 편리함을 느낌", "규모가 작은 프로젝트이므로 타입의 강제성에 대한 장점을 많이 느끼진 못했지만 여러명의 개발자가 하나의 서비스를 제공할때 사용시 매우 유용할 것 같다고 느낌", "Type 설정시 어떤 타입인지 알아야되서 어려움이 있었음"],
     "role": [
       {
