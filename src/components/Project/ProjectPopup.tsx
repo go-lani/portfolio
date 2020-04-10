@@ -9,7 +9,7 @@ const MockImg = styled.div<{ loaded: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 0 20px;
+  margin: 0 0 30px;
   min-height: 250px;
 
   img {
@@ -17,7 +17,7 @@ const MockImg = styled.div<{ loaded: boolean }>`
   }
 
   ${media.tablet`
-    min-height: 250px;
+    min-height: 200px;
   `}
 
   ${media.mobile`
@@ -52,8 +52,12 @@ const Viewer = styled.div`
 `;
 
 const ViewerTitle = styled.p`
+  width: 165px;
   font-size: 1.8rem;
-  margin: 0 20px 0 0;
+
+  ${media.mobile`
+    width: 140px;
+  `}
 `;
 
 const ViewerList = styled.ul`
@@ -89,7 +93,7 @@ const ViewerItem = styled.li`
 `;
 
 const Notice = styled.p`
-  margin: 5px 0 0;
+  margin: 10px 0 0;
   font-size: 1.4rem;
   line-height: 1.5;
   color: #ff2d54;
@@ -140,7 +144,7 @@ const Detail = styled.li`
 `;
 
 const DetailTitleArea = styled.div`
-  width: 200px;
+  min-width: 165px;
 
   p {
     font-weight: 700;
@@ -152,10 +156,14 @@ const DetailTitleArea = styled.div`
     display: inline-block;
     margin: 10px 0 0;
     padding: 10px;
-    background: #108282;
+    background: #e63f65;
     border-radius: 2px;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
+
+  ${media.mobile`
+    min-width: 140px;
+  `}
 `;
 
 const DetailContent = styled.div`
@@ -181,15 +189,16 @@ const SkillList = styled.ul`
 const SkillItem = styled.li`
   display: inline-block;
   margin: 0 10px 10px 0;
-  padding: 5px 10px;
-  background: #e63f65;
+  padding: 2px 10px;
   border-radius: 2px;
+  background: #505050;
+  font-size: 1.4rem;
 
   &.alpha {
     margin: 0 0 10px;
     padding: 0;
     background: none;
-    line-height: 34px;
+    line-height: 25px;
   }
 `;
 
