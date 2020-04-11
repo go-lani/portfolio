@@ -152,7 +152,8 @@ const DetailTitleArea = styled.div`
     line-height: 1.5;
   }
 
-  a {
+  a,
+  button {
     display: inline-block;
     margin: 10px 0 0;
     padding: 10px;
@@ -375,7 +376,7 @@ export default function ProjectPopup({
                 맡은 역할 및<br />
                 구현항목
               </p>
-              {reviewDetail && (
+              {reviewDetail ? (
                 <a
                   href={reviewDetail}
                   target="_blank"
@@ -383,6 +384,10 @@ export default function ProjectPopup({
                 >
                   자세히 보기
                 </a>
+              ) : (
+                <button onClick={() => alert('준비중입니다.')}>
+                  자세히 보기
+                </button>
               )}
             </DetailTitleArea>
             <DetailContent>
