@@ -84,6 +84,7 @@
     "github": "https://github.com/publizm/fastscanner",
     "notice": "현재 rapidAPI에서 FilghtLiveSearch를 삭제하였습니다. 구현 동영상을 보시는 것을 추천드립니다.",
     "reviews": ["팀원과 함께 일정에 대해 고민을 많이 하고, 대화를 통해 유동적으로 업무 분담을 하며 진행하였는데, 일정 안에 기획했던 기능뿐만 아니라 + α를 구현하게 되어 팀원과의 커뮤니케이션이 중요하다는 것을 느낌", "데이터 가공 및 데이터에 따른 UI 바인딩 방법을 숙달하게 되었음"],
+    "reviewDetail": "https://github.com/publizm/fastscanner/blob/master/REVIEW.md",
     "role": [
       {
         "img": null,
