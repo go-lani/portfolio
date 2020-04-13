@@ -103,36 +103,40 @@
         "text": "4. 검색 페이지 - 출발지/도착지 선택 Response 데이터를 가공하여 상태 저장"
       },
       {
+        "img": null,
+        "text": "5. 메인 페이지 - URL 파라미터와 쿼리를 통한 Session 발급 및 해당 Session키로 데이터 재가공"
+      },
+      {
         "img": "./images/fastscanner-source05.png",
-        "text": "5. 메인 페이지 - URL 파라미터와 쿼리를 통해 재검색 영역 데이터 바인딩"
+        "text": "6. 메인 페이지 - URL 파라미터와 쿼리를 통해 재검색 영역 데이터 바인딩"
       },
       {
         "img": null,
-        "text": "6. 메인 페이지 - URL 파라미터와 쿼리를 통한 Session 발급 및 해당 Session키로 데이터 재가공"
+        "text": "7. 메인 페이지 - LiveSearch Data 가공 및 UI 노출"
       },
       {
         "img": "./images/fastscanner-source07.png",
-        "text": "7. 메인 페이지 - 최저가에 대한 소팅 및 해당 필터의 평균 시간 및 가격 렌더링"
+        "text": "8. 메인 페이지 - 최저가에 대한 소팅 및 해당 필터의 평균 시간 및 가격 렌더링"
       },
       {
         "img": "./images/fastscanner-source08.png",
-        "text": "8. 메인 페이지 - 가는 날/오는 날 출발시간 기준 필터링하여 UI 노출"
+        "text": "9. 메인 페이지 - 가는 날/오는 날 출발시간 기준 필터링하여 UI 노출"
       },
       {
         "img": "./images/fastscanner-source09.png",
-        "text": "9. 메인 페이지 - 데이터 요청시 데이터는 Pending과 Completed로 상태가 나뉘는데 이를 활용하여 ProgressBar 구현"
+        "text": "10. 메인 페이지 - 데이터 요청시 데이터는 Pending과 Completed로 상태가 나뉘는데 이를 활용하여 ProgressBar 구현"
       },
       {
         "img": null,
-        "text": "10. 메인 페이지 - Infinity scroll을 통한 데이터 노출"
+        "text": "11. 메인 페이지 - Infinity scroll을 통한 데이터 노출"
       },
       {
         "img": "./images/fastscanner-source11.png",
-        "text": "11. 메인 페이지 - Pendding 상태일 경우(데이터가 완전히 불러오지 않은 상황)에 완료된 데이터만 데이터를 가공하여 미리 노출, 이 경우 최소가로 Sorting 하여 UI에 노출"
+        "text": "12. 메인 페이지 - Pendding 상태일 경우(데이터가 완전히 불러오지 않은 상황)에 완료된 데이터만 데이터를 가공하여 미리 노출, 이 경우 최소가로 Sorting 하여 UI에 노출"
       },
       {
         "img": "./images/fastscanner-source12.png",
-        "text": "12. 메인 페이지 - 경유지 및 항공사 로고 마우스 오버시 정보 노출"
+        "text": "13. 메인 페이지 - 경유지 및 항공사 로고 마우스 오버시 정보 노출"
       }
     ]
   },
