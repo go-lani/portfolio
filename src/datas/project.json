@@ -225,28 +225,32 @@
         "text": "2. 전반적인 UI 설계 및 스타일링"
       },
       {
+        "img": null,
+        "text": "3. Mock Server를 이용한 데이터 통신"
+      },
+      {
         "img": "./images/onello-source03.png",
-        "text": "3. 대주제 추가 및 수정 기능"
+        "text": "4. 대주제 추가 및 수정 기능"
       },
       {
         "img": "./images/onello-source04.png",
-        "text": "4. 소주제 제목 추가"
+        "text": "5. 소주제 제목 추가"
       },
       {
         "img": null,
-        "text": "5. 대주제 클릭 시 상세 팝업 내 데이터 바인딩"
+        "text": "6. 대주제 클릭 시 상세 팝업 내 데이터 바인딩"
       },
       {
         "img": "./images/onello-source06.png",
-        "text": "6. 상세 팝업 - Label 데이터 바인딩"
+        "text": "7. 상세 팝업 - Label 데이터 바인딩"
       },
       {
         "img": "./images/onello-source07.png",
-        "text": "7. 상세 팝업 - Checklist 체크상태에 따른 progress 구현"
+        "text": "8. 상세 팝업 - Checklist 체크상태에 따른 progress 구현"
       },
       {
         "img": "./images/onello-source08.png",
-        "text": "8. 상세 팝업 - Description 작성 및 수정"
+        "text": "9. 상세 팝업 - Description 작성 및 수정"
       }
     ]
   },
